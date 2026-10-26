@@ -16,30 +16,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-cv:
-    name: Compile LaTeX Resume
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Compile LaTeX to PDF
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: cv.tex
-          latexmk_use_lualatex: false
-          latexmk_use_xelatex: false
-
-      - name: Upload PDF Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: compiled-cv
-          path: cv.pdf
-          retention-days: 7
-
-  deploy:
-    name: Deploy Portfolio to GitHub Pages
-    needs: build-cv
+  build-and-deploy:
+    name: Build LaTeX CV & Deploy to GitHub Pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -48,18 +26,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Download Compiled CV
-        uses: actions/download-artifact@v4
+      - name: Compile LaTeX Resume to PDF
+        uses: xu-cheng/latex-action@v3
         with:
-          name: compiled-cv
-          path: .
+          root_file: cv.tex
+          latexmk_use_lualatex: false
+          latexmk_use_xelatex: false
 
-      - name: Copy CV for Fallback Links
+      - name: Duplicate PDF for Mirror / Fallback Links
         run: |
           cp cv.pdf Github_CV.pdf
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
