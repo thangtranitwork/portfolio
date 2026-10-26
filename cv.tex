@@ -1,0 +1,169 @@
+%-------------------------
+% Professional Software Engineer Resume in LaTeX
+% Author: Tran Doan Xuan Thang
+% Standard: ATS-Friendly, High-Impact Action-Result Verbs, Single-Page
+%------------------------
+
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{4pt}
+
+% Adjust margins for concise single-page layout
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.65in}
+\addtolength{\textheight}{1.3in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-7pt}\scshape\raggedright\normalsize\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+% Ensure machine-readability (ATS)
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2.5pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \small #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[3]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} $|$ \textit{\small #2} & \small #3 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\LARGE \scshape Tran Doan Xuan Thang} \\ \vspace{2pt}
+    {\textbf{Backend Software Engineer}} \\ \vspace{3pt}
+    \small
+    Ho Chi Minh City, Vietnam \ $|$ \
+    \href{tel:0367854658}{0367 854 658} \ $|$ \
+    \href{mailto:thangtran.it.work@gmail.com}{\underline{thangtran.it.work@gmail.com}} \\ \vspace{2pt}
+    \href{https://github.com/thangtranitwork}{\underline{github.com/thangtranitwork}} \ $|$ \
+    \href{https://www.linkedin.com/in/%C4%91o%C3%A0n-xu%C3%A2n-th%E1%BA%AFng-tr%E1%BA%A7n-441106312}{\underline{linkedin.com/in/thangtran}} \ $|$ \
+    \href{https://thangtranitwork.github.io/portfolio/}{\underline{portfolio-site}}
+\end{center}
+
+%-----------SUMMARY / PROFILE-----------
+\section{Professional Summary}
+\small{
+Backend Software Engineer with hands-on experience designing and scaling distributed systems, enterprise microservices, and high-performance internal platforms. Proficient in \textbf{Go (Golang)}, \textbf{PostgreSQL/MySQL}, \textbf{gRPC}, \textbf{Redis}, and \textbf{RabbitMQ}, with a strong focus on high-concurrency processing, database optimization (indexing, query tuning, eliminating N+1 queries), and reliable architecture patterns.
+}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Go (Golang), Java, JavaScript/TypeScript, SQL, Python} \\ \vspace{1pt}
+     \textbf{Backend \& Architecture}{: Microservices, gRPC, Protocol Buffers, RESTful APIs, WebSocket, Transactional Outbox, Event-Driven} \\ \vspace{1pt}
+     \textbf{Databases \& Messaging}{: PostgreSQL, MySQL, Redis (Distributed Locking, Caching), MongoDB, Neo4j, RabbitMQ, Kafka} \\ \vspace{1pt}
+     \textbf{Frontend \& Tools}{: Next.js, React.js, Tailwind CSS, Docker, Nginx, Linux, Git, GitHub Actions, pprof Profiler}
+    }}
+ \end{itemize}
+
+%-----------WORK EXPERIENCE-----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Fclick Solutions Co., Ltd}{Mar 2026 -- Present}
+      {Backend Software Engineer}{Ho Chi Minh City, Vietnam}
+      \resumeItemListStart
+        \resumeItem{\textbf{Smart Matching \& Map Cost Saving:} Built multi-service ride booking and preferred-destination matching so drivers receive trips on their way home while reducing third-party map costs.}
+        \resumeItem{\textbf{Partner Booking \& Live Tracking:} Enabled external partners and businesses to book rides and deliveries directly from their platforms with live tracking links and automatic driver reassignment.}
+        \resumeItem{\textbf{In-App Calling \& Automated Alerts:} Added direct in-app voice calls and multi-channel order updates across \textbf{Zalo}, \textbf{SMS}, \textbf{Email}, and mobile push notifications.}
+        \resumeItem{\textbf{ERP \& Large-Scale Batch Operations:} Built internal ERP modules for fleet inventory and contract approvals alongside bulk data import and automated fee-collection tools to reduce manual operational overhead.}
+        \resumeItem{\textbf{High-Speed CRM \& Lead Pipeline:} Centralized multi-channel leads with regional access control and optimized customer search and sales analytics latency from \textbf{2.5s down to 40ms}.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------KEY PROJECTS-----------
+\section{Key Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {Social Network Microservices}{\href{https://github.com/thangtranitwork/social-network-micro-services-go}{\underline{github.com/thangtranitwork/social-network-micro-services-go}}}{Jul 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{\textbf{Tech Stack:} Go (Golang), gRPC, Protobuf, PostgreSQL, Neo4j, Redis, MongoDB, Kafka, MinIO, Next.js, Docker, CI/CD}
+        \resumeItem{Architected a scalable microservices platform adopting the \textbf{Database-per-Service} pattern with an \textbf{API Gateway} handling centralized JWT auth, rate limiting, and reverse proxy routing.}
+        \resumeItem{Built graph-based recommendation engines using \textbf{Neo4j} for personalized newsfeed ranking and friend suggestions.}
+        \resumeItem{Developed real-time messaging and WebRTC signaling over \textbf{WebSocket}, backed by \textbf{MinIO} for presigned media uploads and \textbf{FCM} for push notifications.}
+        \resumeItem{Configured smart \textbf{GitHub Actions CI/CD} pipelines to detect modified services and automate isolated Docker deployments.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {MultiWallet -- Personal Finance Management}{\href{https://github.com/thangtranitwork/multi-wallet-management}{\underline{github.com/thangtranitwork/multi-wallet-management}}}{Aug 2026 -- Present}
+      \resumeItemListStart
+        \resumeItem{\textbf{Tech Stack:} React Native (Expo SDK 57), TypeScript, Expo SQLite, Gemini 2.0 Flash Vision, Neo-Brutalism UI}
+        \resumeItem{Designed an \textbf{Offline-First} mobile app managing multi-source balances, credit card billing cycles, installments, and debts with multimodal AI receipt OCR.}
+        \resumeItem{Implemented dynamic \textbf{NAPAS-standard VietQR} generation with automated billing amounts and recipient account fallbacks.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION & HONORS-----------
+\section{Education \& Honors}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Saigon Technology University (STU)}{2021 -- 2025}
+      {Bachelor of Engineering in Information Technology}{GPA: 3.52 / 4.0}
+      \resumeItemListStart
+        \resumeItem{\textbf{Honors \& Awards:} \textbf{1st Place} (2021--2022) \& \textbf{3rd Place} (2023--2024) in ``Potential Coder Competition''; 4 consecutive academic years Good Study -- Good Practice Awards (2021 -- 2025).}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}

@@ -1,0 +1,3037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRAN DOAN XUAN THANG — Backend Software Engineer</title>
+
+  <!-- SEO & Primary Meta Tags -->
+  <meta name="title" content="TRAN DOAN XUAN THANG — Backend Software Engineer" />
+  <meta name="description" content="Backend Software Engineer with hands-on experience designing and scaling distributed systems, enterprise microservices, and high-performance internal platforms with Go, gRPC, PostgreSQL, Redis & RabbitMQ." />
+  <meta name="keywords" content="Tran Doan Xuan Thang, Backend Software Engineer, Golang, Go Developer, gRPC, Microservices, Distributed Systems, High Concurrency, PostgreSQL, MySQL, Redis, RabbitMQ, Docker, Linux, Ho Chi Minh City, Vietnam" />
+  <meta name="author" content="Tran Doan Xuan Thang" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#010206" />
+
+  <!-- Open Graph / Facebook / LinkedIn / Zalo -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thangtranitwork.github.io/portfolio/" />
+  <meta property="og:title" content="Tran Doan Xuan Thang — Backend Software Engineer" />
+  <meta property="og:description" content="Engineering high-concurrency Golang microservices, gRPC distributed meshes, real-time DevOps / MCP automation, and low-latency database architectures." />
+  <meta property="og:image" content="images/portfolio-preview.png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="564" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Tran Doan Xuan Thang Portfolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://thangtranitwork.github.io/portfolio/" />
+  <meta name="twitter:title" content="Tran Doan Xuan Thang — Backend Software Engineer" />
+  <meta name="twitter:description" content="Engineering high-concurrency Golang microservices, gRPC distributed meshes, real-time DevOps / MCP automation, and low-latency database architectures." />
+  <meta name="twitter:image" content="images/portfolio-preview.png" />
+
+  <!-- High-Tech Glowing Terminal SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23010206'/%3E%3Cpath d='M8 11l6 5-6 5M16 21h8' stroke='%2367e8f9' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <style>
+    :root {
+      --bg: #010206;
+      --ink: #ffffff;
+      --sub: #d4d8e8;
+      --muted: #8b93b0;
+      --line: rgba(255, 255, 255, 0.14);
+      --line-strong: rgba(255, 255, 255, 0.32);
+      --gold: #fcd34d;
+      --cyan: #67e8f9;
+      --violet: #a78bfa;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --spring: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: #000;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #010206;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+    }
+
+    /* ================= MAJESTIC 3D COSMIC SINGULARITY & DEEP STARFIELD CANVAS ================= */
+    #cosmos-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Subtle edge vignette that preserves cosmic vibrancy while keeping text ultra-legible */
+    .cosmos-vignette {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(1, 2, 6, 0.05) 0%, rgba(1, 2, 6, 0.45) 75%, rgba(1, 2, 6, 0.82) 100%);
+    }
+
+    /* ================= FIXED TOP HEADER ================= */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 18px clamp(20px, 3.2vw, 52px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(1, 2, 8, 0.68);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .brand {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sub);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* ================= HERO SECTION ================= */
+    .hero-scene {
+      position: relative;
+      z-index: 10;
+      min-height: 100dvh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 4vw 60px;
+    }
+
+    .hero-center {
+      width: 100%;
+      max-width: 1680px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+      text-shadow: 0 0 20px rgba(252, 211, 77, 0.45);
+      animation: fadeUp 0.9s var(--spring) both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Single-line guaranteed on desktop */
+    .void-title {
+      font-size: clamp(2.1rem, 4.9vw, 5.15rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.08;
+      margin-bottom: 28px;
+      white-space: nowrap;
+      text-shadow:
+        0 0 22px rgba(255, 255, 255, 0.48),
+        0 0 48px rgba(103, 232, 249, 0.28),
+        0 4px 24px rgba(0, 0, 0, 0.9);
+    }
+
+    @media (max-width: 768px) {
+      .void-title {
+        white-space: normal;
+        font-size: clamp(2.2rem, 8.5vw, 3.2rem);
+      }
+    }
+
+    .void-word {
+      display: inline-block;
+      margin-right: 0.26em;
+    }
+    .void-word:last-child {
+      margin-right: 0;
+    }
+
+    @keyframes letterSpring {
+      0% {
+        transform: scale(0.45) translateY(14px);
+        opacity: 0;
+      }
+      68% {
+        transform: scale(1.06) translateY(-2px);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .void-letter {
+      display: inline-block;
+      color: #ffffff;
+      animation: letterSpring 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    .hero-sub {
+      font-size: clamp(1.02rem, 1.35vw, 1.2rem);
+      color: var(--sub);
+      max-width: 720px;
+      margin: 0 auto 38px;
+      line-height: 1.72;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.98), 0 0 8px rgba(0, 0, 0, 0.9);
+      animation: fadeUp 1s var(--spring) 0.35s both;
+    }
+
+    .hero-sub strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      animation: fadeUp 1s var(--spring) 0.5s both;
+    }
+
+    .raw-link {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+      transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+    }
+
+    .raw-link:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Bottom Core Tech Pillars Strip (Single-Row Guaranteed on Desktop/Laptop) */
+    .hero-metrics {
+      position: relative;
+      z-index: 10;
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: clamp(16px, 2.6vw, 44px);
+      max-width: 1520px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeUp 1s var(--spring) 0.65s both;
+    }
+
+    .metric-item {
+      text-align: center;
+      white-space: nowrap;
+      transition: transform 0.3s var(--spring);
+    }
+
+    .metric-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .metric-val {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: clamp(0.95rem, 1.32vw, 1.42rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #fff;
+      white-space: nowrap;
+      text-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
+    }
+
+    .metric-val i {
+      font-size: clamp(1rem, 1.35vw, 1.25rem);
+    }
+
+    .metric-lbl {
+      font-family: var(--font-mono);
+      font-size: clamp(0.62rem, 0.72vw, 0.7rem);
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 6px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-metrics {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px 36px;
+      }
+    }
+
+    /* ================= MAIN CONTENT ================= */
+    .content-wrapper {
+      position: relative;
+      z-index: 10;
+      padding: 0 clamp(20px, 3.2vw, 52px);
+    }
+
+    .container {
+      max-width: 1680px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 110px 0;
+    }
+
+    /* ================= SCROLL MOTION REVEAL SYSTEM ================= */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(42px);
+      transition:
+        opacity 0.85s var(--spring),
+        transform 0.85s var(--spring);
+      will-change: opacity, transform;
+    }
+
+    .scroll-reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line-strong);
+      margin-bottom: 16px;
+    }
+
+    .section-head h2 {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      text-shadow: 0 0 16px rgba(252, 211, 77, 0.35);
+    }
+
+    .section-head span {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* ================= TECH STACK ICON PILLS (NO BOXES, CLEAN INLINE) ================= */
+    .tech-stack-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      align-items: center;
+      margin-top: 18px;
+    }
+
+    .tech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: #f4f4f8;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .tech-badge:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    .tech-badge i {
+      font-size: 1.05rem;
+    }
+
+    .tech-badge img, .tech-badge svg {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    /* ================= 01 / PRODUCTION EXPERIENCE ================= */
+    .exp-row {
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      gap: 56px;
+      padding: 52px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .exp-company {
+      font-size: 1.65rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .exp-role {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--cyan);
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .exp-meta {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .exp-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .exp-item h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .exp-item h3 span {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--sub);
+      font-size: 0.94rem;
+      line-height: 1.68;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.95);
+    }
+
+    .feature-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--cyan);
+      font-family: var(--font-mono);
+    }
+
+    .feature-list li strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .feature-list li code {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--cyan);
+      background: rgba(103, 232, 249, 0.08);
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+
+    /* ================= 02 / SELECTED WORKS (DETAILED EDITORIAL SHOWCASE) ================= */
+    .work-showcase {
+      position: relative;
+      padding: 68px 0;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1.05fr 1.15fr;
+      gap: 56px;
+      align-items: start;
+      transition: border-color 0.5s ease;
+    }
+
+    .work-showcase.active-in-view {
+      border-bottom-color: rgba(103, 232, 249, 0.28);
+    }
+
+    /* Animated glowing sweep line on the bottom divider when project is in view */
+    .work-showcase::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--cyan), transparent);
+      background-size: 200% 100%;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+    }
+
+    .work-showcase.active-in-view::after {
+      opacity: 0.75;
+      animation: borderFlow 6s linear infinite;
+    }
+
+    @keyframes borderFlow {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Staggered child animations inside work-showcase when scrolled into view */
+    .work-showcase .work-header-line,
+    .work-showcase .work-title,
+    .work-showcase .work-subtitle,
+    .work-showcase .work-lead,
+    .work-showcase .feature-list li,
+    .work-showcase .tech-stack-row,
+    .work-showcase .media-stage {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity 0.75s var(--spring),
+        transform 0.75s var(--spring);
+    }
+
+    .work-showcase .media-stage {
+      transform: translateX(28px) translateY(16px) scale(0.985);
+    }
+
+    @media (min-width: 1081px) {
+      .work-showcase:nth-of-type(even) {
+        grid-template-columns: 1.15fr 1.05fr;
+      }
+
+      .work-showcase:nth-of-type(even) > .media-stage {
+        order: -1;
+      }
+
+      .work-showcase:nth-of-type(even) .media-stage {
+        transform: translateX(-28px) translateY(16px) scale(0.985);
+      }
+    }
+
+    .work-showcase.in-view .work-header-line { opacity: 1; transform: translateY(0); transition-delay: 0.04s; }
+    .work-showcase.in-view .work-title { opacity: 1; transform: translateY(0); transition-delay: 0.10s; }
+    .work-showcase.in-view .work-subtitle { opacity: 1; transform: translateY(0); transition-delay: 0.16s; }
+    .work-showcase.in-view .work-lead { opacity: 1; transform: translateY(0); transition-delay: 0.22s; }
+    .work-showcase.in-view .feature-list li:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.28s; }
+    .work-showcase.in-view .feature-list li:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
+    .work-showcase.in-view .feature-list li:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.42s; }
+    .work-showcase.in-view .feature-list li:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.49s; }
+    .work-showcase.in-view .tech-stack-row { opacity: 1; transform: translateY(0); transition-delay: 0.52s; }
+    .work-showcase.in-view .media-stage { opacity: 1; transform: translateX(0) translateY(0) scale(1); transition-delay: 0.18s; }
+
+    .feature-list li {
+      transition: transform 0.25s ease, color 0.25s ease;
+    }
+
+    .feature-list li:hover {
+      transform: translateX(5px);
+      color: #fff;
+    }
+
+    .feature-list li::before {
+      transition: transform 0.25s ease, color 0.25s ease;
+    }
+
+    .feature-list li:hover::before {
+      color: var(--gold);
+      transform: translateX(2px) scale(1.15);
+    }
+
+    .work-showcase.no-media {
+      grid-template-columns: 340px 1fr;
+    }
+
+    .work-header-line {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .work-index {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .work-index::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      transition: background 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .work-showcase.active-in-view .work-index::before {
+      background: #34d399;
+      box-shadow: 0 0 10px #34d399, 0 0 20px rgba(52, 211, 153, 0.6);
+      animation: livePulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes livePulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.38); opacity: 0.65; }
+    }
+
+    .work-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .work-links a {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #fff;
+      text-decoration: none;
+      padding-bottom: 3px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .work-links a:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    .work-title {
+      font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.18;
+    }
+
+    .work-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--cyan);
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .work-lead {
+      color: var(--sub);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 18px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+    }
+
+    .work-lead strong {
+      color: #fff;
+    }
+
+    /* ================= SCREENSHOT SHOWCASE / GALLERY ================= */
+    .media-stage {
+      width: 100%;
+    }
+
+    .media-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 10px;
+      align-items: center;
+    }
+
+    .media-tab {
+      position: relative;
+      background: none;
+      border: none;
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 5px 0;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+      transition: color 0.25s ease, border-color 0.25s ease;
+      overflow: hidden;
+    }
+
+    .media-tab:hover {
+      color: #fff;
+    }
+
+    .media-tab.active {
+      color: var(--gold);
+      border-bottom-color: rgba(252, 211, 77, 0.25);
+    }
+
+    /* Animated Auto-Cycle Progress Bar inside active tab when project is in viewport */
+    .media-tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--cyan));
+      transform: scaleX(0);
+      transform-origin: left center;
+    }
+
+    .work-showcase.active-in-view .media-tabs[data-gallery] .media-tab.active::after {
+      animation: tabAutoProgress var(--cycle-ms, 3600ms) linear forwards;
+    }
+
+    .work-showcase.active-in-view .media-stage:hover .media-tabs[data-gallery] .media-tab.active::after {
+      animation-play-state: paused;
+    }
+
+    @keyframes tabAutoProgress {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+
+    .media-viewport {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(4, 6, 14, 0.75);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(103, 232, 249, 0.06);
+      cursor: zoom-in;
+      transition: border-color 0.4s ease, transform 0.4s var(--spring), box-shadow 0.4s ease;
+    }
+
+    /* Gentle ambient levitation when the project is active in viewport */
+    .work-showcase.active-in-view .media-viewport {
+      border-color: rgba(103, 232, 249, 0.34);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.82), 0 0 42px rgba(103, 232, 249, 0.12);
+      animation: viewportFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes viewportFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .media-viewport:hover {
+      border-color: rgba(252, 211, 77, 0.65) !important;
+      animation-play-state: paused !important;
+    }
+
+    /* Shimmer light sweep when image switches */
+    .media-viewport::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 25%, rgba(103, 232, 249, 0.16) 48%, rgba(252, 211, 77, 0.18) 52%, transparent 75%);
+      transform: translateX(-120%);
+      pointer-events: none;
+    }
+
+    .media-viewport.switching::after {
+      animation: lightSweep 0.65s var(--spring);
+    }
+
+    @keyframes lightSweep {
+      from { transform: translateX(-120%); }
+      to { transform: translateX(120%); }
+    }
+
+    .media-viewport img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.55s var(--spring), filter 0.45s ease, opacity 0.35s ease;
+    }
+
+    .media-viewport.switching img {
+      animation: imgCrossfade 0.55s var(--spring);
+    }
+
+    @keyframes imgCrossfade {
+      0% {
+        opacity: 0.32;
+        transform: scale(1.035);
+        filter: brightness(1.25) saturate(1.15);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1) saturate(1);
+      }
+    }
+
+    .media-caption {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      gap: 12px;
+    }
+
+    .media-caption span:first-child {
+      transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    }
+
+    .media-caption.switching span:first-child {
+      animation: captionSlide 0.45s var(--spring);
+    }
+
+    @keyframes captionSlide {
+      0% { opacity: 0; transform: translateY(6px); color: var(--gold); }
+      100% { opacity: 1; transform: translateY(0); color: var(--muted); }
+    }
+
+    /* Single Large Mobile Screen Stage (for MultiWallet) */
+    .media-viewport.mobile-single-view {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 22px 24px;
+      background:
+        radial-gradient(circle at 50% 48%, rgba(103, 232, 249, 0.11) 0%, rgba(252, 211, 77, 0.05) 38%, rgba(3, 5, 12, 0.88) 78%);
+    }
+
+    .media-viewport.mobile-single-view img {
+      width: min(100%, 340px);
+      height: auto;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      box-shadow:
+        0 24px 64px rgba(0, 0, 0, 0.92),
+        0 0 36px rgba(252, 211, 77, 0.14);
+    }
+
+    /* ================= LIGHTBOX MODAL ================= */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(1, 2, 8, 0.92);
+      backdrop-filter: blur(16px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      cursor: zoom-out;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 94vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95);
+    }
+
+    .lightbox-hint {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--sub);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ================= 03 / SPECIFICATIONS & VERTICAL TECH MARQUEE ================= */
+    .specs-split-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 64px;
+      align-items: center;
+      padding: 28px 0 12px;
+    }
+
+    .specs-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(252, 211, 77, 0.32);
+      background: rgba(252, 211, 77, 0.06);
+      margin-bottom: 18px;
+    }
+
+    .specs-heading {
+      font-size: clamp(1.9rem, 2.8vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .specs-lead {
+      color: var(--sub);
+      font-size: 1rem;
+      line-height: 1.72;
+      margin-bottom: 28px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+    }
+
+    .specs-domain-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .specs-domain-item {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 195px 1fr;
+      gap: 20px;
+      align-items: center;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .specs-domain-item:hover {
+      border-bottom-color: rgba(103, 232, 249, 0.45);
+      transform: translateX(4px);
+    }
+
+    .specs-domain-k {
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--cyan);
+    }
+
+    .specs-domain-v {
+      font-size: 0.92rem;
+      color: var(--sub);
+      line-height: 1.65;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      align-items: center;
+    }
+
+    .specs-domain-v strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .spec-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #f4f4f8;
+      padding: 2px 0;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .spec-chip:hover {
+      color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    .spec-chip i {
+      font-size: 1rem;
+    }
+
+    /* 4-Column Alternating Vertical Tech Icon Marquee (Right Column) */
+    .tech-marquee-box {
+      position: relative;
+      height: 720px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background:
+        radial-gradient(circle at 50% 50%, rgba(103, 232, 249, 0.08) 0%, rgba(139, 92, 246, 0.06) 45%, rgba(3, 5, 14, 0.78) 100%);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.8), inset 0 0 40px rgba(103, 232, 249, 0.04);
+      padding: 0 22px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    }
+
+    .marquee-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      will-change: transform;
+    }
+
+    /* Odd columns: Top -> Bottom; Even columns: Bottom -> Top */
+    .marquee-col.dir-down {
+      animation: techScrollDown var(--spd, 22s) linear infinite;
+    }
+
+    .marquee-col.dir-up {
+      animation: techScrollUp var(--spd, 24s) linear infinite;
+    }
+
+    .tech-marquee-box:hover .marquee-col {
+      animation-play-state: paused;
+    }
+
+    @keyframes techScrollDown {
+      0% { transform: translateY(-50%); }
+      100% { transform: translateY(0%); }
+    }
+
+    @keyframes techScrollUp {
+      0% { transform: translateY(0%); }
+      100% { transform: translateY(-50%); }
+    }
+
+    .tech-tile {
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      background: rgba(12, 16, 32, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 8px;
+      transition: transform 0.3s var(--spring), border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    .tech-tile:hover {
+      transform: scale(1.07) translateY(-3px);
+      border-color: var(--gold);
+      background: rgba(20, 26, 48, 0.96);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 22px rgba(252, 211, 77, 0.22);
+    }
+
+    .tech-tile i {
+      font-size: 2.35rem;
+      line-height: 1;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+    }
+
+    .tech-tile span {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      letter-spacing: 0.06em;
+      color: var(--sub);
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    .tech-tile:hover span {
+      color: var(--gold);
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      padding: 90px 0 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .footer-label {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .footer-mail {
+      font-size: clamp(1.35rem, 2.8vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-mail:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 1080px) {
+      .exp-row,
+      .specs-split-layout,
+      .work-showcase,
+      .work-showcase.no-media {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .specs-domain-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+      .exp-cols {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .hero-metrics {
+        gap: 32px;
+      }
+      .nav-links {
+        gap: 18px;
+      }
+    }
+
+    /* ================= SCROLL PROGRESS BAR ================= */
+    .scroll-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cyan), var(--gold), var(--violet));
+      z-index: 9999;
+      pointer-events: none;
+      transition: width 0.08s ease-out;
+      box-shadow: 0 0 12px rgba(103, 232, 249, 0.85);
+    }
+
+    /* ================= BACK TO TOP BUTTON ================= */
+    .back-to-top-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 90;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 18px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      background: rgba(10, 15, 30, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(14px);
+      transition: opacity 0.3s var(--spring), transform 0.3s var(--spring), border-color 0.25s, box-shadow 0.25s, color 0.25s, background 0.25s;
+    }
+    .back-to-top-btn svg {
+      transition: transform 0.25s var(--spring);
+    }
+    .back-to-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-to-top-btn:hover {
+      background: rgba(15, 22, 45, 0.95);
+      border-color: var(--cyan);
+      box-shadow: 0 0 20px rgba(103, 232, 249, 0.45);
+      color: var(--cyan);
+    }
+    .back-to-top-btn:hover svg {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
+
+  <!-- Majestic Full-Page 60FPS 3D Cosmic Singularity, Relativistic Accretion Halo & Deep Starfield -->
+  <canvas id="cosmos-canvas"></canvas>
+  <div class="cosmos-vignette"></div>
+
+  <!-- Top Navigation -->
+  <header>
+    <a href="#top" class="brand">Tran Doan Xuan Thang</a>
+    <nav class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#works">Selected Works</a>
+      <a href="#specs">Tech Stack</a>
+      <a href="https://drive.google.com/file/d/1G8xOWCQm1oSlL_8TJnfwB4_neK1ISAnK/view?usp=sharing" target="_blank">CV ↗</a>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero-scene" id="top">
+    <div class="hero-center">
+      <div class="hero-eyebrow">Backend Software Engineer — Ho Chi Minh City</div>
+
+      <!-- Single-line animated title -->
+      <h1 class="void-title" id="animated-title" data-text="Tran Doan Xuan Thang"></h1>
+
+      <p class="hero-sub">
+        Engineering high-concurrency <strong>Golang</strong> microservices, <strong>gRPC</strong> distributed meshes, real-time <strong>DevOps / MCP</strong> automation, and low-latency database architectures.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://drive.google.com/file/d/1G8xOWCQm1oSlL_8TJnfwB4_neK1ISAnK/view?usp=sharing" target="_blank" class="raw-link">Resume PDF ↗</a>
+        <a href="https://github.com/thangtranitwork" target="_blank" class="raw-link">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/%C4%91o%C3%A0n-xu%C3%A2n-th%E1%BA%AFng-tr%E1%BA%A7n-441106312" target="_blank" class="raw-link">LinkedIn ↗</a>
+        <a href="mailto:thangtran.it.work@gmail.com" class="raw-link">Email ↗</a>
+      </div>
+
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <div class="metric-val">
+            <i class="devicon-go-original-wordmark colored"></i>
+            <i class="devicon-java-plain colored"></i>
+            Go &amp; Java
+          </div>
+          <div class="metric-lbl">Core Backend Systems</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-val">
+            <i class="devicon-grpc-plain colored"></i>
+            <i class="devicon-rabbitmq-original colored"></i>
+            gRPC · RabbitMQ · Kafka
+          </div>
+          <div class="metric-lbl">Distributed Mesh &amp; Outbox</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-val">
+            <i class="devicon-postgresql-plain colored"></i>
+            <i class="devicon-redis-plain colored"></i>
+            Postgres · Redis · Neo4j
+          </div>
+          <div class="metric-lbl">Polyglot Data &amp; Locking</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-val">
+            <i class="devicon-docker-plain colored"></i>
+            <i class="devicon-google-plain colored"></i>
+            Docker · CI/CD · MCP
+          </div>
+          <div class="metric-lbl">DevOps &amp; AI Automation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <div class="content-wrapper">
+    <div class="container">
+
+      <!-- 01 / EXPERIENCE -->
+      <section id="experience">
+        <div class="section-head scroll-reveal">
+          <h2>01 / Production Experience</h2>
+          <span>MAR 2026 — PRESENT</span>
+        </div>
+
+        <div class="exp-row scroll-reveal">
+          <div>
+            <div class="exp-company">Fclick Solutions</div>
+            <div class="exp-role">Backend Software Engineer</div>
+            <div class="exp-meta">
+              Ho Chi Minh City, Vietnam<br />
+              Ride-Hailing · Partner Hub · B2B Delivery · ERP &amp; CRM
+            </div>
+
+            <div class="tech-stack-row" style="margin-top: 24px;">
+              <span class="tech-badge"><i class="devicon-go-original-wordmark colored"></i>Go</span>
+              <span class="tech-badge"><i class="devicon-grpc-plain colored"></i>gRPC</span>
+              <span class="tech-badge"><i class="devicon-php-plain colored"></i>PHP</span>
+              <span class="tech-badge"><i class="devicon-laravel-original colored"></i>Laravel</span>
+              <span class="tech-badge"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+              <span class="tech-badge"><i class="devicon-mysql-original colored"></i>MySQL</span>
+              <span class="tech-badge"><i class="devicon-redis-plain colored"></i>Redis</span>
+              <span class="tech-badge"><i class="devicon-rabbitmq-original colored"></i>RabbitMQ</span>
+              <span class="tech-badge"><i class="devicon-react-original colored"></i>React Native</span>
+              <span class="tech-badge"><i class="devicon-nextjs-original-wordmark"></i>Next.js</span>
+              <span class="tech-badge"><i class="devicon-docker-plain colored"></i>Docker</span>
+            </div>
+          </div>
+
+          <div class="exp-cols">
+            <div class="exp-item">
+              <h3>Ride-Hailing &amp; Delivery Platform <span>PASSENGER · DRIVER · PARTNER</span></h3>
+              <ul class="feature-list">
+                <li><strong>Smart Matching &amp; Map Cost Saving:</strong> Built multi-service booking and preferred-destination matching so drivers get trips on their way home while cutting third-party map costs.</li>
+                <li><strong>Partner Booking &amp; Live Tracking:</strong> Enabled external partners and businesses to book rides and deliveries directly from their platforms with live tracking links and automatic driver reassignment.</li>
+                <li><strong>In-App Calling &amp; Automated Alerts:</strong> Added in-app voice calls and multi-channel order updates across Zalo, SMS, Email, and mobile push so customers never miss a delivery status.</li>
+              </ul>
+            </div>
+
+            <div class="exp-item">
+              <h3>Internal ERP, Operations &amp; CRM <span>2.5s → 40ms</span></h3>
+              <ul class="feature-list">
+                <li><strong>ERP Workflow Digitization:</strong> Built internal ERP modules for fleet inventory, payment advances, and contract approvals to digitize cross-department workflows.</li>
+                <li><strong>Large-Scale Batch Operations:</strong> Developed bulk data import and automated fee-collection tools that replace manual work and significantly reduce daily operational overhead.</li>
+                <li><strong>High-Speed CRM &amp; Lead Pipeline:</strong> Centralized multi-channel leads with regional access control and optimized customer search and sales analytics from <strong>2.5s down to 40ms</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 / SELECTED WORKS & ARCHITECTURE SHOWCASE -->
+      <section id="works">
+        <div class="section-head scroll-reveal">
+          <h2>02 / Selected Works &amp; Product Showcase</h2>
+          <span>KEY FEATURES &amp; PROBLEMS SOLVED</span>
+        </div>
+
+        <!-- PROJECT 01: SERVICE DEPLOYMENT & MONITORING HUB -->
+        <article class="work-showcase scroll-reveal">
+          <div>
+            <div class="work-header-line">
+              <span class="work-index">01 / DEVOPS &amp; AUTOMATION</span>
+              <div class="work-links">
+                <a href="https://github.com/thangtranitwork/deployment-and-monitoring-services-system" target="_blank">GitHub ↗</a>
+              </div>
+            </div>
+            <h3 class="work-title">Service Deployment &amp; Monitoring Hub</h3>
+            <div class="work-subtitle">Centralized Deploy Console · Live Server Monitoring · AI Voice Assistant</div>
+            <p class="work-lead">
+              Eliminates the tedious workflow of manually connecting into multiple servers to pull code, switch branches, rebuild services, and inspect logs across different environments.
+            </p>
+            <ul class="feature-list">
+              <li><strong>Batch Multi-Service Deployment:</strong> Select and deploy multiple microservices simultaneously from a single dashboard while watching live build progress and output logs in real time.</li>
+              <li><strong>Web Terminal, Git &amp; VPN Control:</strong> Provides an in-browser terminal with saved command shortcuts, one-click Git branch switching, code diff review, and integrated VPN connection management without leaving the browser.</li>
+              <li><strong>AI Voice Assistant &amp; Health Monitoring:</strong> Supports natural voice or text commands to trigger deployments, check service statuses, and monitor live CPU, memory, and uptime across remote servers.</li>
+            </ul>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge"><i class="devicon-go-original-wordmark colored"></i>Go</span>
+              <span class="tech-badge"><i class="devicon-react-original colored"></i>React</span>
+              <span class="tech-badge"><i class="devicon-typescript-plain colored"></i>TypeScript</span>
+              <span class="tech-badge"><i class="devicon-tailwindcss-original colored"></i>Tailwind CSS</span>
+              <span class="tech-badge"><i class="devicon-linux-plain"></i>Web Terminal</span>
+              <span class="tech-badge"><i class="devicon-google-plain colored"></i>Gemini AI Agent</span>
+              <span class="tech-badge"><i class="devicon-git-plain colored"></i>Git &amp; OpenVPN</span>
+            </div>
+          </div>
+
+          <div class="media-stage">
+            <div class="media-tabs" data-gallery="ids-gallery">
+              <button class="media-tab active" type="button" onclick="switchGallery('ids-gallery', 'images/ids-command-center.png', 'Command Center — Manage 15+ services, web terminal, VPN tunnel & AI assistant in one place', this)">01. Command Center</button>
+              <button class="media-tab" type="button" onclick="switchGallery('ids-gallery', 'images/ids-multi-deploy-matrix.png', 'Multi-Deploy Matrix — Run parallel service builds and stream live deployment logs', this)">02. Multi-Deploy Matrix</button>
+            </div>
+            <div class="media-viewport" id="ids-gallery-view" onclick="openLightbox(document.getElementById('ids-gallery-img').src)">
+              <img id="ids-gallery-img" src="images/ids-command-center.png" alt="Service Deployment & Monitoring Hub Dashboard" loading="lazy" />
+            </div>
+            <div class="media-caption">
+              <span id="ids-gallery-cap">Command Center — Manage 15+ services, web terminal, VPN tunnel &amp; AI assistant in one place</span>
+              <span>Click to enlarge ↗</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 02: DISTRIBUTED SOCIAL NETWORK PLATFORM -->
+        <article class="work-showcase scroll-reveal">
+          <div>
+            <div class="work-header-line">
+              <span class="work-index">02 / SOCIAL PLATFORM &amp; MONITORING</span>
+              <div class="work-links">
+                <a href="https://github.com/thangtranitwork/social-network-micro-services-go" target="_blank">Backend Repo ↗</a>
+                <a href="https://github.com/thangtranitwork/social-network-ui" target="_blank">Frontend Repo ↗</a>
+              </div>
+            </div>
+            <h3 class="work-title">Distributed Social Network Platform</h3>
+            <div class="work-subtitle">Social Newsfeed · Real-Time Chat &amp; Video Calls · Visual System Monitor</div>
+            <p class="work-lead">
+              Combines a full-featured social networking experience with a built-in operations dashboard to trace slow requests, search logs, and monitor service health in real time.
+            </p>
+            <ul class="feature-list">
+              <li><strong>Personalized Feed &amp; Visual Image Search:</strong> Users can publish posts and stories, receive friend and content suggestions based on social connections, and find visually similar posts from any photo.</li>
+              <li><strong>Instant Messaging &amp; Video Calling:</strong> Supports real-time private and group chat, online presence indicators, media sharing, and peer-to-peer audio and video calls directly in the browser.</li>
+              <li><strong>All-in-One Operations Dashboard:</strong> Features a live service dependency map, centralized log search, API response time analytics, and direct container start, stop, and inspection controls.</li>
+            </ul>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge"><i class="devicon-go-original-wordmark colored"></i>Go</span>
+              <span class="tech-badge"><i class="devicon-grpc-plain colored"></i>gRPC</span>
+              <span class="tech-badge"><i class="devicon-apachekafka-original"></i>Kafka</span>
+              <span class="tech-badge"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+              <span class="tech-badge"><i class="devicon-neo4j-plain colored"></i>Neo4j</span>
+              <span class="tech-badge"><i class="devicon-mongodb-plain colored"></i>MongoDB</span>
+              <span class="tech-badge"><i class="devicon-redis-plain colored"></i>Redis</span>
+              <span class="tech-badge"><i class="devicon-nextjs-original-wordmark"></i>Next.js</span>
+              <span class="tech-badge"><i class="devicon-docker-plain colored"></i>Docker</span>
+            </div>
+          </div>
+
+          <div class="media-stage">
+            <div class="media-tabs" data-gallery="sn-gallery">
+              <button class="media-tab active" type="button" onclick="switchGallery('sn-gallery', 'images/sn-topology-map.png', 'Topology Monitoring Map — Live service dependency graph and health status', this)">01. Topology Map</button>
+              <button class="media-tab" type="button" onclick="switchGallery('sn-gallery', 'images/sn-web-feed.png', 'Social Web Client — Newsfeed, stories, visual similarity search and real-time chat', this)">02. Web Feed &amp; AI</button>
+              <button class="media-tab" type="button" onclick="switchGallery('sn-gallery', 'images/sn-log-center.png', 'Centralized Log Center — Live log streaming and cross-service request tracing', this)">03. Log Center</button>
+              <button class="media-tab" type="button" onclick="switchGallery('sn-gallery', 'images/sn-latency-profiler.png', 'Performance Profiler — Route response times and resource usage breakdown', this)">04. Latency Profiler</button>
+              <button class="media-tab" type="button" onclick="switchGallery('sn-gallery', 'images/sn-docker-telemetry.png', 'Container Telemetry — Live CPU, memory and network streams with container controls', this)">05. Docker Telemetry</button>
+            </div>
+            <div class="media-viewport" id="sn-gallery-view" onclick="openLightbox(document.getElementById('sn-gallery-img').src)">
+              <img id="sn-gallery-img" src="images/sn-topology-map.png" alt="Social Network Architecture Telemetry" loading="lazy" />
+            </div>
+            <div class="media-caption">
+              <span id="sn-gallery-cap">Topology Monitoring Map — Live service dependency graph and health status</span>
+              <span>Click to enlarge ↗</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 03: MULTIWALLET AI PERSONAL FINANCE -->
+        <article class="work-showcase scroll-reveal">
+          <div>
+            <div class="work-header-line">
+              <span class="work-index">03 / MOBILE FINTECH &amp; AI</span>
+              <div class="work-links">
+                <a href="https://github.com/thangtranitwork/multi-wallet-management" target="_blank">GitHub ↗</a>
+              </div>
+            </div>
+            <h3 class="work-title">MultiWallet — AI Personal Finance</h3>
+            <div class="work-subtitle">Multi-Source Expense Tracker · AI Receipt Scanner · Smart Bill Splitting</div>
+            <p class="work-lead">
+              Removes the hassle of manual expense logging and confusing credit card billing cycles by automating receipt entry and calculating exact safe-to-spend balances offline on the device.
+            </p>
+            <ul class="feature-list">
+              <li><strong>AI Receipt Scanning &amp; Voice Entry:</strong> Automatically extracts items, delivery fees, and discounts from shopping or food delivery screenshots, and lets users log daily transactions by voice or text.</li>
+              <li><strong>Unified Wallets &amp; Safe-to-Spend Planning:</strong> Tracks bank accounts, e-wallets, cash, savings goals, and credit card installments in one place to show how much money is truly available after upcoming bills.</li>
+              <li><strong>Group Bill Splitting &amp; Instant QR Payment:</strong> Splits group meals or shared expenses fairly with automatic discount allocation and generates VietQR codes for one-tap settlement.</li>
+              <li><strong>Biometric Privacy &amp; Cloud Backup:</strong> Keeps financial data private on the device with fingerprint and PIN locks while supporting encrypted backup and restore via Google Drive.</li>
+            </ul>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge"><i class="devicon-react-original colored"></i>React Native</span>
+              <span class="tech-badge"><i class="devicon-typescript-plain colored"></i>TypeScript</span>
+              <span class="tech-badge"><i class="devicon-sqlite-plain colored"></i>SQLite</span>
+              <span class="tech-badge"><i class="devicon-google-plain colored"></i>Gemini Vision AI</span>
+              <span class="tech-badge"><i class="devicon-android-plain colored"></i>Android Widget</span>
+            </div>
+          </div>
+
+          <div class="media-stage">
+            <div class="media-tabs" data-gallery="mw-gallery">
+              <button class="media-tab active" type="button" onclick="switchGallery('mw-gallery', 'images/multiwallet-wallets-plan.png', 'Multi-Source Wallets & Safe-to-Spend — Track liquid balances, credit billing cycles and reserved funds', this)">01. Multi-Wallet &amp; Plan</button>
+              <button class="media-tab" type="button" onclick="switchGallery('mw-gallery', 'images/multiwallet-gemini-ocr.png', 'AI Receipt Scanner — Extract items, shipping fees and discounts from receipts or voice input', this)">02. AI Receipt Scanner</button>
+              <button class="media-tab" type="button" onclick="switchGallery('mw-gallery', 'images/multiwallet-security-sync.png', 'Biometric Lock & Cloud Backup — Fingerprint protection, PIN lock and Google Drive sync', this)">03. Security &amp; Sync</button>
+            </div>
+            <div class="media-viewport mobile-single-view" id="mw-gallery-view" onclick="openLightbox(document.getElementById('mw-gallery-img').src)">
+              <img id="mw-gallery-img" src="images/multiwallet-wallets-plan.png" alt="MultiWallet Wallets & Safe-to-Spend" loading="lazy" />
+            </div>
+            <div class="media-caption">
+              <span id="mw-gallery-cap">Multi-Source Wallets &amp; Safe-to-Spend — Track liquid balances, credit billing cycles and reserved funds</span>
+              <span>Click to enlarge ↗</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 04: GNOME DESKTOP EXTENSIONS SUITE -->
+        <article class="work-showcase scroll-reveal">
+          <div>
+            <div class="work-header-line">
+              <span class="work-index">04 / LINUX DESKTOP UTILITIES</span>
+              <div class="work-links">
+                <a href="https://github.com/thangtranitwork/gnome-clipboard-history" target="_blank">Clipboard Ext ↗</a>
+                <a href="https://github.com/thangtranitwork/system-status-monitor" target="_blank">System Monitor ↗</a>
+                <a href="https://github.com/thangtranitwork/stretch-reminder" target="_blank">Break Reminder ↗</a>
+                <a href="https://github.com/thangtranitwork/gnome-ext-hanabi" target="_blank">Hanabi Fork ↗</a>
+              </div>
+            </div>
+            <h3 class="work-title">GNOME Desktop Extensions Suite</h3>
+            <div class="work-subtitle">Clipboard History Manager · Top-Bar System Monitor · Eye-Rest Reminder</div>
+            <p class="work-lead">
+              Solves everyday productivity gaps on the Linux desktop by integrating native clipboard management, instant hardware resource visibility, and automated rest reminders directly into the top bar.
+            </p>
+            <ul class="feature-list">
+              <li><strong>Smart Clipboard History Manager:</strong> Keeps a searchable history of copied text and images with instant full-size image previews, resolution details, pinned items, and a privacy mode.</li>
+              <li><strong>Live Top-Bar Hardware Monitor:</strong> Shows real-time processor load, memory usage, swap activity, and battery status right on the desktop panel without opening heavy system utilities.</li>
+              <li><strong>Automated Break Reminder &amp; Live Wallpaper Fixes:</strong> Tracks active work time to prompt scheduled eye-rest breaks and resolves video loop freezes and memory leaks for animated desktop wallpapers.</li>
+            </ul>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge"><i class="devicon-linux-plain"></i>GNOME Shell</span>
+              <span class="tech-badge"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+              <span class="tech-badge"><i class="devicon-c-plain colored"></i>GTK4 &amp; Clutter</span>
+              <span class="tech-badge"><i class="devicon-ubuntu-plain colored"></i>Linux Desktop</span>
+            </div>
+          </div>
+
+          <div class="media-stage">
+            <div class="media-tabs" data-gallery="gnome-gallery">
+              <button class="media-tab active" type="button" onclick="switchGallery('gnome-gallery', 'images/gnome-clipboard-history.png', 'Clipboard History — Instant image preview modal, resolution details, search and private mode', this)">01. Clipboard History</button>
+              <button class="media-tab" type="button" onclick="switchGallery('gnome-gallery', 'images/gnome-system-monitor.png', 'System Status Monitor — Live CPU, RAM, Swap and Battery status in the GNOME top bar', this)">02. System Monitor</button>
+              <button class="media-tab" type="button" onclick="switchGallery('gnome-gallery', 'images/gnome-break-reminder.png', 'Stretch & Break Reminder — Idle-aware fullscreen eye-rest countdown overlay', this)">03. Break Reminder</button>
+            </div>
+            <div class="media-viewport" id="gnome-gallery-view" onclick="openLightbox(document.getElementById('gnome-gallery-img').src)">
+              <img id="gnome-gallery-img" src="images/gnome-clipboard-history.png" alt="GNOME Clipboard History Extension" loading="lazy" />
+            </div>
+            <div class="media-caption">
+              <span id="gnome-gallery-cap">Clipboard History — Instant image preview modal, resolution details, search and private mode</span>
+              <span>Click to enlarge ↗</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 05: AUTOMATED PHOTO & FACE ORGANIZER CLI -->
+        <article class="work-showcase scroll-reveal">
+          <div>
+            <div class="work-header-line">
+              <span class="work-index">05 / COMPUTER VISION &amp; AI TOOLING</span>
+              <div class="work-links">
+                <a href="https://github.com/thangtranitwork/face-recognition-classifier" target="_blank">GitHub ↗</a>
+              </div>
+            </div>
+            <h3 class="work-title">Automated Photo &amp; Face Organizer CLI</h3>
+            <div class="work-subtitle">Face Recognition · Unsupervised Identity Grouping · Batch Media Sorting</div>
+            <p class="work-lead">
+              Saves hours of manual photo sorting by scanning thousands of unorganized images and videos and automatically grouping them into clean folders by person.
+            </p>
+            <ul class="feature-list">
+              <li><strong>High-Accuracy Face Matching:</strong> Detects faces across large photo collections and matches them against known reference portraits across different angles, lighting, and expressions.</li>
+              <li><strong>Automatic Grouping for Unknown People:</strong> Discovers recurring individuals who do not have reference photos yet and groups their pictures into separate identity folders automatically.</li>
+              <li><strong>Safe Preview &amp; One-Command Batch Sorting:</strong> Lets users preview sorting results before moving files, isolates unclear photos for review, and renames entire media libraries with a single command.</li>
+            </ul>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge"><i class="devicon-python-plain colored"></i>Python</span>
+              <span class="tech-badge"><i class="devicon-opencv-plain colored"></i>InsightFace</span>
+              <span class="tech-badge"><i class="devicon-scikitlearn-plain colored"></i>Scikit-Learn</span>
+              <span class="tech-badge"><i class="devicon-numpy-plain colored"></i>NumPy &amp; ONNX</span>
+              <span class="tech-badge"><i class="devicon-bash-plain"></i>Bash CLI</span>
+            </div>
+          </div>
+
+          <div class="media-stage">
+            <div class="media-tabs">
+              <button class="media-tab active" type="button">Automated Face Detection &amp; Batch Sorting Output</button>
+            </div>
+            <div class="media-viewport" onclick="openLightbox('images/face-recognition-arcface-cli.png')">
+              <img src="images/face-recognition-arcface-cli.png" alt="Face Recognition Classifier CLI" loading="lazy" />
+            </div>
+            <div class="media-caption">
+              <span>Batch sorting 30/30 test images accurately with live progress and confidence scores</span>
+              <span>Click to enlarge ↗</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 06: NOC CLOTHES SHOP -->
+        <article class="work-showcase scroll-reveal">
+          <div>
+            <div class="work-header-line">
+              <span class="work-index">06 / FULL-STACK E-COMMERCE</span>
+              <div class="work-links">
+                <a href="https://github.com/thangtranitwork/api-clothes-shop" target="_blank">Backend Repo ↗</a>
+                <a href="https://github.com/thangtranitwork/ui-closthes-shop" target="_blank">Frontend Repo ↗</a>
+              </div>
+            </div>
+            <h3 class="work-title">Noc Clothes Shop</h3>
+            <div class="work-subtitle">Online Fashion Storefront · Multi-Variant Catalog · Digital Payment</div>
+
+            <p class="work-lead">
+              Delivers a complete online apparel shopping experience from product discovery and variant filtering to real-time stock reservation and verified digital checkout.
+            </p>
+            <ul class="feature-list">
+              <li><strong>Multi-Variant Catalog &amp; Stock Reservation:</strong> Supports filtering products by size, color, and price range while locking inventory during checkout to prevent overselling during flash sales.</li>
+              <li><strong>Online Payment &amp; Order Management:</strong> Integrates VNPAY checkout with automatic payment verification, Google sign-in, and an admin portal for managing products, promotions, and customer orders.</li>
+              <li><strong>Educational Clone Note:</strong> <em>Storefront UI layout and sample product catalog data were cloned from an existing streetwear brand strictly for learning purposes to focus on backend architecture, database modeling, and payment gateway integration.</em></li>
+            </ul>
+
+            <div class="tech-stack-row">
+              <span class="tech-badge"><i class="devicon-java-plain colored"></i>Java</span>
+              <span class="tech-badge"><i class="devicon-spring-original colored"></i>Spring Boot</span>
+              <span class="tech-badge"><i class="devicon-mysql-original colored"></i>MySQL</span>
+              <span class="tech-badge"><i class="devicon-react-original colored"></i>React.js</span>
+              <span class="tech-badge"><i class="devicon-google-plain colored"></i>OAuth2 &amp; JWT</span>
+            </div>
+          </div>
+
+          <div class="media-stage">
+            <div class="media-tabs" data-gallery="noc-gallery">
+              <button class="media-tab active" type="button" onclick="switchGallery('noc-gallery', 'images/noc-clothes-home.png', 'Storefront Collection Showcase — Hero campaign & responsive React UI — UI/Data cloned for learning', this)">01. Storefront Home</button>
+              <button class="media-tab" type="button" onclick="switchGallery('noc-gallery', 'images/noc-clothes-catalog.png', 'Multi-Variant Product Catalog — Dynamic filtering by price range, color attributes & SKU variants', this)">02. Product Catalog &amp; Filters</button>
+            </div>
+            <div class="media-viewport" id="noc-gallery-view" onclick="openLightbox(document.getElementById('noc-gallery-img').src)">
+              <img id="noc-gallery-img" src="images/noc-clothes-home.png" alt="Noc Clothes Shop Storefront" loading="lazy" />
+            </div>
+            <div class="media-caption">
+              <span id="noc-gallery-cap">Storefront Collection Showcase — Hero campaign &amp; responsive React UI — UI/Data cloned for learning</span>
+              <span>Click to enlarge ↗</span>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- 03 / TECHNICAL SPECIFICATIONS & VERTICAL TECH MARQUEE -->
+      <section id="specs">
+        <div class="section-head scroll-reveal">
+          <h2>03 / Technical Specifications &amp; Education</h2>
+          <span>CORE COMPETENCIES &amp; PLATFORMS</span>
+        </div>
+
+        <div class="specs-split-layout scroll-reveal">
+          <!-- Left Column: Architectural Narrative, Categorized Specs & Academic Honors -->
+          <div class="specs-copy-col">
+            <h3 class="specs-heading">Key Technologies &amp; Engineering Platforms</h3>
+            <p class="specs-lead">
+              Architecting high-concurrency Go &amp; Laravel backends, fault-tolerant event meshes, optimized database engines, and AI-accelerated cross-platform mobile &amp; web applications.
+            </p>
+
+            <div class="specs-domain-list">
+              <div class="specs-domain-item">
+                <div class="specs-domain-k">01 / Languages</div>
+                <div class="specs-domain-v">
+                  <span class="spec-chip"><i class="devicon-go-original-wordmark colored"></i>Golang</span>
+                  <span class="spec-chip"><i class="devicon-php-plain colored"></i>PHP</span>
+                  <span class="spec-chip"><i class="devicon-java-plain colored"></i>Java</span>
+                  <span class="spec-chip"><i class="devicon-typescript-plain colored"></i>TypeScript / JS</span>
+                  <span class="spec-chip"><i class="devicon-python-plain colored"></i>Python</span>
+                  <span class="spec-chip"><i class="devicon-csharp-plain colored"></i>C#</span>
+                  <span class="spec-chip"><i class="devicon-azuresqldatabase-plain colored"></i>SQL</span>
+                  <span class="spec-chip"><i class="devicon-bash-plain"></i>Bash</span>
+                </div>
+              </div>
+
+              <div class="specs-domain-item">
+                <div class="specs-domain-k">02 / Backend &amp; Mesh</div>
+                <div class="specs-domain-v">
+                  <span class="spec-chip"><i class="devicon-grpc-plain colored"></i>gRPC &amp; Protobuf</span>
+                  <span class="spec-chip"><i class="devicon-laravel-original colored"></i>Laravel</span>
+                  <span class="spec-chip"><i class="devicon-spring-original colored"></i>Spring Boot</span>
+                  <span class="spec-chip"><i class="devicon-fastapi-plain colored"></i>FastAPI</span>
+                  <span class="spec-chip"><i class="devicon-rabbitmq-original colored"></i>RabbitMQ</span>
+                  <span class="spec-chip"><i class="devicon-apachekafka-original"></i>Apache Kafka</span>
+                  <span class="spec-chip"><i class="devicon-nodejs-plain colored"></i>WebSocket / SSE</span>
+                </div>
+              </div>
+
+              <div class="specs-domain-item">
+                <div class="specs-domain-k">03 / Mobile, Web &amp; AI</div>
+                <div class="specs-domain-v">
+                  <span class="spec-chip"><i class="devicon-react-original colored"></i>React Native &amp; Expo</span>
+                  <span class="spec-chip"><i class="devicon-android-plain colored"></i>AI-Assisted Mobile Apps</span>
+                  <span class="spec-chip"><i class="devicon-nextjs-original-wordmark"></i>Next.js</span>
+                  <span class="spec-chip"><i class="devicon-vitejs-plain colored"></i>React &amp; Vite</span>
+                  <span class="spec-chip"><i class="devicon-tailwindcss-original colored"></i>Tailwind CSS</span>
+                  <span class="spec-chip"><i class="devicon-google-plain colored"></i>Gemini AI / MCP</span>
+                  <span class="spec-chip"><i class="devicon-opencv-plain colored"></i>InsightFace</span>
+                </div>
+              </div>
+
+              <div class="specs-domain-item">
+                <div class="specs-domain-k">04 / Data &amp; Search</div>
+                <div class="specs-domain-v">
+                  <span class="spec-chip"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+                  <span class="spec-chip"><i class="devicon-mysql-original colored"></i>MySQL</span>
+                  <span class="spec-chip"><i class="devicon-redis-plain colored"></i>Redis</span>
+                  <span class="spec-chip"><i class="devicon-elasticsearch-plain colored"></i>Elasticsearch</span>
+                  <span class="spec-chip"><i class="devicon-neo4j-plain colored"></i>Neo4j Graph DB</span>
+                  <span class="spec-chip"><i class="devicon-mongodb-plain colored"></i>MongoDB</span>
+                  <span class="spec-chip"><i class="devicon-sqlite-plain colored"></i>SQLite</span>
+                  <span class="spec-chip"><i class="devicon-firebase-plain colored"></i>Firebase</span>
+                </div>
+              </div>
+
+              <div class="specs-domain-item">
+                <div class="specs-domain-k">05 / Tooling &amp; DevOps</div>
+                <div class="specs-domain-v">
+                  <span class="spec-chip"><i class="devicon-docker-plain colored"></i>Docker &amp; Compose</span>
+                  <span class="spec-chip"><i class="devicon-kubernetes-plain colored"></i>Kubernetes</span>
+                  <span class="spec-chip"><i class="devicon-githubactions-plain colored"></i>GitHub Actions CI/CD</span>
+                  <span class="spec-chip"><i class="devicon-nginx-original colored"></i>Nginx</span>
+                  <span class="spec-chip"><i class="devicon-playwright-plain colored"></i>Playwright E2E</span>
+                  <span class="spec-chip"><i class="devicon-linux-plain"></i>Linux &amp; OpenVPN</span>
+                </div>
+              </div>
+
+              <div class="specs-domain-item">
+                <div class="specs-domain-k">06 / Education</div>
+                <div class="specs-domain-v" style="display:block;">
+                  <strong>Saigon Technology University · 2021 — 2025</strong> — B.Eng in Information Technology · <strong>GPA: 3.52 / 4.0</strong> · <strong>1st &amp; 3rd Place</strong> Potential Coder Competition
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: 4-Column Alternating Vertical Tech Icon Marquee (Top->Down / Down->Top) -->
+          <div class="tech-marquee-box">
+            <!-- Column 1: Top -> Bottom -->
+            <div class="marquee-col dir-down" style="--spd: 26s;">
+              <div class="tech-tile"><i class="devicon-go-original-wordmark colored"></i><span>Golang</span></div>
+              <div class="tech-tile"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+              <div class="tech-tile"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+              <div class="tech-tile"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+              <div class="tech-tile"><i class="devicon-react-original colored"></i><span>React Native</span></div>
+              <div class="tech-tile"><i class="devicon-rabbitmq-original colored"></i><span>RabbitMQ</span></div>
+              <div class="tech-tile"><i class="devicon-elasticsearch-plain colored"></i><span>Elasticsearch</span></div>
+              <div class="tech-tile"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+              <!-- Duplicate for seamless loop -->
+              <div class="tech-tile"><i class="devicon-go-original-wordmark colored"></i><span>Golang</span></div>
+              <div class="tech-tile"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+              <div class="tech-tile"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+              <div class="tech-tile"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+              <div class="tech-tile"><i class="devicon-react-original colored"></i><span>React Native</span></div>
+              <div class="tech-tile"><i class="devicon-rabbitmq-original colored"></i><span>RabbitMQ</span></div>
+              <div class="tech-tile"><i class="devicon-elasticsearch-plain colored"></i><span>Elasticsearch</span></div>
+              <div class="tech-tile"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+            </div>
+
+            <!-- Column 2: Bottom -> Top -->
+            <div class="marquee-col dir-up" style="--spd: 30s;">
+              <div class="tech-tile"><i class="devicon-grpc-plain colored"></i><span>gRPC</span></div>
+              <div class="tech-tile"><i class="devicon-laravel-original colored"></i><span>Laravel</span></div>
+              <div class="tech-tile"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
+              <div class="tech-tile"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+              <div class="tech-tile"><i class="devicon-spring-original colored"></i><span>Spring Boot</span></div>
+              <div class="tech-tile"><i class="devicon-neo4j-plain colored"></i><span>Neo4j</span></div>
+              <div class="tech-tile"><i class="devicon-android-plain colored"></i><span>Mobile AI</span></div>
+              <div class="tech-tile"><i class="devicon-linux-plain"></i><span>Linux</span></div>
+              <!-- Duplicate for seamless loop -->
+              <div class="tech-tile"><i class="devicon-grpc-plain colored"></i><span>gRPC</span></div>
+              <div class="tech-tile"><i class="devicon-laravel-original colored"></i><span>Laravel</span></div>
+              <div class="tech-tile"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
+              <div class="tech-tile"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+              <div class="tech-tile"><i class="devicon-spring-original colored"></i><span>Spring Boot</span></div>
+              <div class="tech-tile"><i class="devicon-neo4j-plain colored"></i><span>Neo4j</span></div>
+              <div class="tech-tile"><i class="devicon-android-plain colored"></i><span>Mobile AI</span></div>
+              <div class="tech-tile"><i class="devicon-linux-plain"></i><span>Linux</span></div>
+            </div>
+
+            <!-- Column 3: Top -> Bottom -->
+            <div class="marquee-col dir-down" style="--spd: 24s;">
+              <div class="tech-tile"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+              <div class="tech-tile"><i class="devicon-mysql-original colored"></i><span>MySQL</span></div>
+              <div class="tech-tile"><i class="devicon-nextjs-original-wordmark"></i><span>Next.js</span></div>
+              <div class="tech-tile"><i class="devicon-apachekafka-original"></i><span>Kafka</span></div>
+              <div class="tech-tile"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+              <div class="tech-tile"><i class="devicon-firebase-plain colored"></i><span>Firebase</span></div>
+              <div class="tech-tile"><i class="devicon-nginx-original colored"></i><span>Nginx</span></div>
+              <div class="tech-tile"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+              <!-- Duplicate for seamless loop -->
+              <div class="tech-tile"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+              <div class="tech-tile"><i class="devicon-mysql-original colored"></i><span>MySQL</span></div>
+              <div class="tech-tile"><i class="devicon-nextjs-original-wordmark"></i><span>Next.js</span></div>
+              <div class="tech-tile"><i class="devicon-apachekafka-original"></i><span>Kafka</span></div>
+              <div class="tech-tile"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+              <div class="tech-tile"><i class="devicon-firebase-plain colored"></i><span>Firebase</span></div>
+              <div class="tech-tile"><i class="devicon-nginx-original colored"></i><span>Nginx</span></div>
+              <div class="tech-tile"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+            </div>
+
+            <!-- Column 4: Bottom -> Top -->
+            <div class="marquee-col dir-up" style="--spd: 28s;">
+              <div class="tech-tile"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+              <div class="tech-tile"><i class="devicon-sqlite-plain colored"></i><span>SQLite</span></div>
+              <div class="tech-tile"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind</span></div>
+              <div class="tech-tile"><i class="devicon-githubactions-plain colored"></i><span>CI/CD</span></div>
+              <div class="tech-tile"><i class="devicon-kubernetes-plain colored"></i><span>Kubernetes</span></div>
+              <div class="tech-tile"><i class="devicon-playwright-plain colored"></i><span>Playwright</span></div>
+              <div class="tech-tile"><i class="devicon-opencv-plain colored"></i><span>ArcFace AI</span></div>
+              <div class="tech-tile"><i class="devicon-google-plain colored"></i><span>Gemini MCP</span></div>
+              <!-- Duplicate for seamless loop -->
+              <div class="tech-tile"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+              <div class="tech-tile"><i class="devicon-sqlite-plain colored"></i><span>SQLite</span></div>
+              <div class="tech-tile"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind</span></div>
+              <div class="tech-tile"><i class="devicon-githubactions-plain colored"></i><span>CI/CD</span></div>
+              <div class="tech-tile"><i class="devicon-kubernetes-plain colored"></i><span>Kubernetes</span></div>
+              <div class="tech-tile"><i class="devicon-playwright-plain colored"></i><span>Playwright</span></div>
+              <div class="tech-tile"><i class="devicon-opencv-plain colored"></i><span>ArcFace AI</span></div>
+              <div class="tech-tile"><i class="devicon-google-plain colored"></i><span>Gemini MCP</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="scroll-reveal">
+        <div>
+          <div class="footer-label">INITIATE TRANSMISSION</div>
+          <a href="mailto:thangtran.it.work@gmail.com" class="footer-mail">
+            thangtran.it.work@gmail.com ↗
+          </a>
+        </div>
+
+        <div class="hero-actions" style="animation:none;">
+          <a href="tel:0367854658" class="raw-link">0367 854 658</a>
+          <a href="https://github.com/thangtranitwork" target="_blank" class="raw-link">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/%C4%91o%C3%A0n-xu%C3%A2n-th%E1%BA%AFng-tr%E1%BA%A7n-441106312" target="_blank" class="raw-link">LinkedIn ↗</a>
+          <a href="https://drive.google.com/file/d/1G8xOWCQm1oSlL_8TJnfwB4_neK1ISAnK/view?usp=sharing" target="_blank" class="raw-link">Download CV ↗</a>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Full-Resolution Image Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Full resolution preview" />
+    <div class="lightbox-hint">Click anywhere or press ESC to close</div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+    <span>TOP</span>
+  </button>
+
+  <script>
+    // ============================================================================
+    // 1. GALLERY SWITCHER, MULTIWALLET SPOTLIGHT & LIGHTBOX
+    // ============================================================================
+    function switchGallery(galleryId, imgSrc, captionText, btnEl) {
+      const img = document.getElementById(galleryId + '-img');
+      const view = document.getElementById(galleryId + '-view');
+      const cap = document.getElementById(galleryId + '-cap');
+
+      if (view) {
+        view.classList.remove('switching');
+        void view.offsetWidth; // trigger reflow for smooth animation replay
+        view.classList.add('switching');
+      }
+
+      if (img) img.src = imgSrc;
+
+      if (cap) {
+        const capWrap = cap.parentElement;
+        if (capWrap) {
+          capWrap.classList.remove('switching');
+          void capWrap.offsetWidth;
+          capWrap.classList.add('switching');
+        }
+        cap.textContent = captionText;
+      }
+
+      const tabContainer = btnEl.parentElement;
+      if (tabContainer) {
+        tabContainer.querySelectorAll('.media-tab').forEach(t => t.classList.remove('active'));
+      }
+      // Restart CSS progress animation on active tab
+      btnEl.classList.remove('active');
+      void btnEl.offsetWidth;
+      btnEl.classList.add('active');
+    }
+
+    function switchMultiWallet(phoneIdx, captionText, btnEl) {
+      const triptych = document.getElementById('mw-triptych');
+      const cap = document.getElementById('mw-gallery-cap');
+      if (triptych) {
+        const phones = triptych.querySelectorAll('.phone-shot');
+        phones.forEach((p, idx) => {
+          p.classList.toggle('active-phone', idx === phoneIdx);
+        });
+      }
+      if (cap) {
+        const capWrap = cap.parentElement;
+        if (capWrap) {
+          capWrap.classList.remove('switching');
+          void capWrap.offsetWidth;
+          capWrap.classList.add('switching');
+        }
+        cap.textContent = captionText;
+      }
+      const tabContainer = btnEl.parentElement;
+      if (tabContainer) {
+        tabContainer.querySelectorAll('.media-tab').forEach(t => t.classList.remove('active'));
+      }
+      btnEl.classList.remove('active');
+      void btnEl.offsetWidth;
+      btnEl.classList.add('active');
+    }
+
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      lbImg.src = src;
+      lb.classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // ============================================================================
+    // 2. ANIMATED SPRING TITLE ("Into the Void" per-letter spring effect)
+    // ============================================================================
+    (function renderAnimatedTitle() {
+      const titleEl = document.getElementById('animated-title');
+      const text = titleEl.getAttribute('data-text') || 'Tran Doan Xuan Thang';
+      const words = text.split(' ');
+      titleEl.innerHTML = '';
+
+      words.forEach((word, wordIndex) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'void-word';
+
+        word.split('').forEach((letter, letterIndex) => {
+          const letterSpan = document.createElement('span');
+          letterSpan.className = 'void-letter';
+          letterSpan.textContent = letter;
+          const delay = 0.12 + wordIndex * 0.08 + letterIndex * 0.025;
+          letterSpan.style.animationDelay = `${delay.toFixed(3)}s`;
+          wordSpan.appendChild(letterSpan);
+        });
+
+        titleEl.appendChild(wordSpan);
+      });
+    })();
+
+    // ============================================================================
+    // 3. INTERACTIVE 60FPS 3D COSMIC UNIVERSE, NEBULA & BLACK HOLE VORTEX ENGINE
+    // ============================================================================
+    (function initMajesticCosmos() {
+      const canvas = document.getElementById('cosmos-canvas');
+      const ctx = canvas.getContext('2d', { alpha: false });
+
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+      let dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      // --- Interactive Cursor, Gravity Well, Binary Black-Hole Birth & Merger State ---
+      const mouse = {
+        x: width * 0.5,
+        y: height * 0.46,
+        tx: width * 0.5,
+        ty: height * 0.46,
+        vx: 0,
+        vy: 0,
+        speed: 0,
+        active: false,
+        down: false,
+        holdTime: 0,
+        warpBoost: 0
+      };
+
+      const stardust = [];
+      const shockwaves = [];
+      const secondaryHoles = []; // Holds newly formed / merging secondary black holes
+      let activeBornHole = null;
+      let mergerAfterglow = 0;
+
+      const dustColors = [
+        '103, 232, 249',
+        '253, 230, 138',
+        '196, 181, 253',
+        '255, 255, 255'
+      ];
+
+      function spawnStardust(x, y, count, burstSpeed, inheritVx = 0, inheritVy = 0) {
+        for (let i = 0; i < count; i++) {
+          if (stardust.length > 340) stardust.shift();
+          const angle = Math.random() * Math.PI * 2;
+          const spd = (0.4 + Math.random() * 1.1) * burstSpeed;
+          stardust.push({
+            x: x + (Math.random() - 0.5) * 8,
+            y: y + (Math.random() - 0.5) * 8,
+            vx: Math.cos(angle) * spd + inheritVx * 0.22,
+            vy: Math.sin(angle) * spd + inheritVy * 0.22,
+            r: 0.9 + Math.random() * 2.1,
+            life: 1,
+            decay: 0.011 + Math.random() * 0.015,
+            color: dustColors[Math.floor(Math.random() * dustColors.length)]
+          });
+        }
+      }
+
+      function triggerShockwave(x, y, maxR = 280, alpha = 0.78) {
+        shockwaves.push({
+          x,
+          y,
+          r: 6,
+          maxR: maxR + Math.random() * 90,
+          alpha
+        });
+        mouse.warpBoost = Math.min(2.6, mouse.warpBoost + 1.15);
+        spawnStardust(x, y, 28, 4.2);
+      }
+
+      function releaseActiveHoleToMerge() {
+        if (activeBornHole) {
+          if (activeBornHole.charge >= 0.35) {
+            activeBornHole.state = 'merging';
+            activeBornHole.mergeProgress = 0;
+          } else {
+            activeBornHole.state = 'dissipating';
+          }
+          activeBornHole = null;
+        }
+        mouse.down = false;
+        mouse.holdTime = 0;
+      }
+
+      window.addEventListener('mousemove', (e) => {
+        const dx = e.clientX - mouse.tx;
+        const dy = e.clientY - mouse.ty;
+        mouse.vx = dx;
+        mouse.vy = dy;
+        mouse.speed = Math.min(45, Math.hypot(dx, dy));
+        mouse.tx = e.clientX;
+        mouse.ty = e.clientY;
+        mouse.active = true;
+
+        if (mouse.speed > 2.2) {
+          const spawnCount = Math.min(4, Math.ceil(mouse.speed / 12));
+          spawnStardust(e.clientX, e.clientY, spawnCount, 0.9, dx, dy);
+        }
+      }, { passive: true });
+
+      window.addEventListener('mousedown', (e) => {
+        mouse.down = true;
+        mouse.holdTime = 0;
+        mouse.tx = e.clientX;
+        mouse.ty = e.clientY;
+        mouse.active = true;
+        triggerShockwave(e.clientX, e.clientY);
+
+        // Start forming a new Secondary Black Hole at the cursor
+        const newHole = {
+          x: e.clientX,
+          y: e.clientY,
+          vx: 0,
+          vy: 0,
+          charge: 0.05,
+          mass: 0.1,
+          formed: false,
+          state: 'forming',
+          orbitAngle: 0,
+          orbitDist: 0
+        };
+        secondaryHoles.push(newHole);
+        activeBornHole = newHole;
+      }, { passive: true });
+
+      window.addEventListener('mouseup', () => {
+        releaseActiveHoleToMerge();
+      }, { passive: true });
+
+      window.addEventListener('mouseleave', () => {
+        mouse.active = false;
+        releaseActiveHoleToMerge();
+      }, { passive: true });
+
+      window.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 0) {
+          const t = e.touches[0];
+          mouse.down = true;
+          mouse.holdTime = 0;
+          mouse.tx = t.clientX;
+          mouse.ty = t.clientY;
+          mouse.active = true;
+          triggerShockwave(t.clientX, t.clientY);
+
+          const newHole = {
+            x: t.clientX,
+            y: t.clientY,
+            vx: 0,
+            vy: 0,
+            charge: 0.05,
+            mass: 0.1,
+            formed: false,
+            state: 'forming',
+            orbitAngle: 0,
+            orbitDist: 0
+          };
+          secondaryHoles.push(newHole);
+          activeBornHole = newHole;
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        releaseActiveHoleToMerge();
+      }, { passive: true });
+
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+          const t = e.touches[0];
+          const dx = t.clientX - mouse.tx;
+          const dy = t.clientY - mouse.ty;
+          mouse.tx = t.clientX;
+          mouse.ty = t.clientY;
+          mouse.active = true;
+          spawnStardust(t.clientX, t.clientY, 2, 1.0, dx, dy);
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        releaseActiveHoleToMerge();
+      }, { passive: true });
+
+      window.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+          const t = e.touches[0];
+          const dx = t.clientX - mouse.tx;
+          const dy = t.clientY - mouse.ty;
+          mouse.tx = t.clientX;
+          mouse.ty = t.clientY;
+          mouse.active = true;
+          spawnStardust(t.clientX, t.clientY, 2, 1.0, dx, dy);
+        }
+      }, { passive: true });
+
+      // --- A. 950 Multi-Depth 3D Stars (Rich colors, twinkling + diffraction spikes) ---
+      const STAR_COUNT = 950;
+      const starColors = [
+        '255, 255, 255',
+        '200, 235, 255',
+        '255, 230, 175',
+        '165, 215, 255',
+        '220, 195, 255'
+      ];
+
+      const stars = Array.from({ length: STAR_COUNT }, () => {
+        const depth = Math.random(); // 0 = far, 1 = near
+        return {
+          x: Math.random(),
+          y: Math.random(),
+          z: depth,
+          r: 0.4 + Math.pow(depth, 1.7) * 2.1,
+          baseAlpha: 0.25 + depth * 0.72,
+          twinkleSpeed: 0.6 + Math.random() * 2.4,
+          phase: Math.random() * Math.PI * 2,
+          color: starColors[Math.floor(Math.random() * starColors.length)],
+          isBrightHeroStar: depth > 0.91 && Math.random() > 0.45
+        };
+      });
+
+      // --- B. 5 Deep-Space Cosmic Nebula Clouds ---
+      const nebulae = [
+        { x: 0.22, y: 0.25, rx: 0.42, ry: 0.28, color: '56, 189, 248', alpha: 0.09, speed: 0.08 },
+        { x: 0.78, y: 0.32, rx: 0.38, ry: 0.26, color: '139, 92, 246', alpha: 0.085, speed: -0.06 },
+        { x: 0.50, y: 0.46, rx: 0.45, ry: 0.22, color: '251, 191, 36', alpha: 0.065, speed: 0.05 },
+        { x: 0.30, y: 0.75, rx: 0.40, ry: 0.30, color: '37, 99, 235', alpha: 0.08, speed: 0.07 },
+        { x: 0.75, y: 0.80, rx: 0.42, ry: 0.28, color: '168, 85, 247', alpha: 0.075, speed: -0.05 }
+      ];
+
+      // --- C. 170 Smooth Relativistic Black-Hole Vortex Streams ("Into the Void") ---
+      const STREAM_COUNT = 170;
+      const streamPalette = [
+        '255, 255, 255',
+        '186, 230, 253',
+        '253, 230, 138',
+        '196, 181, 253',
+        '103, 232, 249'
+      ];
+
+      const streams = Array.from({ length: STREAM_COUNT }, () => {
+        const startAngle = Math.random() * Math.PI * 2;
+        const maxRadius = 280 + Math.random() * 560;
+        const twist = Math.PI * (0.85 + Math.random() * 0.9);
+        const speed = 0.065 + Math.random() * 0.095;
+        return {
+          startAngle,
+          maxRadius,
+          twist,
+          speed,
+          offset: Math.random(),
+          tailLen: 0.22 + Math.random() * 0.20,
+          lineWidth: 0.45 + Math.random() * 1.15,
+          peakAlpha: 0.22 + Math.random() * 0.58,
+          tiltY: 0.44 + (Math.random() - 0.5) * 0.16,
+          color: streamPalette[Math.floor(Math.random() * streamPalette.length)]
+        };
+      });
+
+      function getSpiralPoint(s, t, cx, cy, scale, rotAngle, tiltOffset, hoverPower, secondaryHoles) {
+        const ease = 1 - Math.pow(1 - t, 1.65);
+        const r = s.maxRadius * scale * (1 + hoverPower * 0.28) * (1 - ease);
+        const angle = s.startAngle - s.twist * (1 + hoverPower * 0.38) * ease;
+        const rawX = r * Math.cos(angle);
+        const rawY = r * Math.sin(angle) * (s.tiltY + tiltOffset);
+        const rx = rawX * Math.cos(rotAngle) - rawY * Math.sin(rotAngle);
+        const ry = rawX * Math.sin(rotAngle) + rawY * Math.cos(rotAngle);
+        let px = cx + rx;
+        let py = cy + ry;
+
+        // 1. Strong Gravitational Deflection & Swirling of the EXISTING streams around Secondary Black Holes
+        if (secondaryHoles && secondaryHoles.length > 0) {
+          for (let h = 0; h < secondaryHoles.length; h++) {
+            const sh = secondaryHoles[h];
+            if (sh.charge < 0.08) continue;
+            const sdx = sh.x - px;
+            const sdy = sh.y - py;
+            const sDistSq = sdx * sdx + sdy * sdy;
+            const shInfluenceR = 340 * scale * (0.4 + sh.charge * 0.6);
+            if (sDistSq < shInfluenceR * shInfluenceR && sDistSq > 16) {
+              const sDist = Math.sqrt(sDistSq);
+              const u = sDist / shInfluenceR;
+              // Smooth cubic Hermite lensing: 0 gradient at boundary, perfectly smooth deflection curve
+              const sNorm = (1 - u) * (1 - u) * (1 + 2 * u);
+              const pull = sNorm * 74 * scale * sh.charge;
+              const swirl = sNorm * 52 * scale * sh.charge;
+              const rDirX = sdx / sDist;
+              const rDirY = sdy / sDist;
+              const tDirX = -sdy / sDist;
+              const tDirY = sdx / sDist;
+              px += rDirX * pull + tDirX * swirl;
+              py += rDirY * pull + tDirY * swirl;
+            }
+          }
+        }
+
+        // 2. Subtle gravitational lensing of spiral streams near cursor when no secondary black hole is active
+        if (mouse.active && (!activeBornHole || activeBornHole.charge < 0.2)) {
+          const mdx = mouse.x - px;
+          const mdy = mouse.y - py;
+          const mDistSq = mdx * mdx + mdy * mdy;
+          const lensRadius = (mouse.down ? 260 : 185) * (1 + hoverPower * 0.35);
+          if (mDistSq < lensRadius * lensRadius && mDistSq > 4) {
+            const mDist = Math.sqrt(mDistSq);
+            const pull = Math.pow(1 - mDist / lensRadius, 2) * (mouse.down ? 32 : 16) * (1 + hoverPower * 0.6);
+            px += (mdx / mDist) * pull * 0.55 - (mdy / mDist) * pull * 0.85;
+            py += (mdy / mDist) * pull * 0.55 + (mdx / mDist) * pull * 0.85;
+          }
+        }
+
+        return { x: px, y: py };
+      }
+
+      let scrollY = window.scrollY || 0;
+      window.addEventListener('scroll', () => {
+        scrollY = window.scrollY || 0;
+      }, { passive: true });
+
+      let startTime = performance.now();
+      let lastNow = startTime;
+      let virtualTime = 0;
+      let coreHover = 0;
+
+      function animate(now) {
+        const dt = Math.min(0.05, (now - lastNow) * 0.001);
+        lastNow = now;
+        const elapsed = (now - startTime) * 0.001;
+
+        // Smoothly interpolate mouse position & decay warp boost
+        mouse.x += (mouse.tx - mouse.x) * 0.12;
+        mouse.y += (mouse.ty - mouse.y) * 0.12;
+        mouse.speed *= 0.9;
+
+        const nx = (mouse.x / Math.max(1, width) - 0.5) * 2;
+        const ny = (mouse.y / Math.max(1, height) - 0.5) * 2;
+
+        // Compute base Black Hole Singularity position & hover proximity
+        const baseCx = width * 0.5 + nx * 42;
+        const heroShift = Math.min(scrollY * 0.14, height * 0.22);
+        const baseCy = height * 0.46 - heroShift * 0.32 + ny * 28;
+        const scale = Math.max(width, height) / 1150;
+        const rotAngle = -0.21 + nx * 0.11;
+        const tiltOffset = ny * 0.06;
+
+        // Update active held Secondary Black Hole formation
+        if (mouse.down && activeBornHole) {
+          mouse.holdTime += dt;
+          activeBornHole.x += (mouse.tx - activeBornHole.x) * 0.22;
+          activeBornHole.y += (mouse.ty - activeBornHole.y) * 0.22;
+          activeBornHole.charge = Math.min(1, mouse.holdTime / 0.55);
+          activeBornHole.mass = Math.min(1.45, 0.15 + mouse.holdTime * 0.85);
+
+          if (!activeBornHole.formed && activeBornHole.charge >= 1) {
+            activeBornHole.formed = true;
+            triggerShockwave(activeBornHole.x, activeBornHole.y, 340, 0.92);
+          }
+
+          if (Math.random() < 0.65) {
+            const ang = Math.random() * Math.PI * 2;
+            const distR = (40 + Math.random() * 90) * scale * activeBornHole.charge;
+            spawnStardust(
+              activeBornHole.x + Math.cos(ang) * distR,
+              activeBornHole.y + Math.sin(ang) * distR * 0.6,
+              1,
+              1.6 + activeBornHole.charge
+            );
+          }
+        }
+
+        // Calculate mutual gravitational pull on the Primary Black Hole from any secondary holes
+        let binaryPullX = 0;
+        let binaryPullY = 0;
+        for (let i = 0; i < secondaryHoles.length; i++) {
+          const sh = secondaryHoles[i];
+          const pullWeight = sh.charge * (sh.state === 'merging' ? 0.28 : 0.18);
+          binaryPullX += (sh.x - baseCx) * pullWeight;
+          binaryPullY += (sh.y - baseCy) * pullWeight;
+        }
+
+        const cx = baseCx + binaryPullX;
+        const cy = baseCy + binaryPullY;
+        mergerAfterglow *= 0.965;
+
+        // Update merging / dissipating secondary black holes (Binary Inspiral toward Primary Black Hole)
+        for (let i = secondaryHoles.length - 1; i >= 0; i--) {
+          const sh = secondaryHoles[i];
+          if (sh.state === 'dissipating') {
+            sh.charge *= 0.84;
+            if (sh.charge < 0.03) secondaryHoles.splice(i, 1);
+            continue;
+          }
+          if (sh.state === 'merging') {
+            const dx = cx - sh.x;
+            const dy = cy - sh.y;
+            const dist = Math.hypot(dx, dy);
+
+            if (dist < 26 * scale) {
+              // Binary Black Hole Coalescence (Merger Complete!)
+              mergerAfterglow = Math.min(1.8, mergerAfterglow + 0.95 + sh.mass * 0.45);
+              mouse.warpBoost = Math.min(3.0, mouse.warpBoost + 1.8);
+              shockwaves.push(
+                { x: cx, y: cy, r: 14, maxR: 480 * scale, alpha: 0.95 },
+                { x: cx, y: cy, r: 28, maxR: 340 * scale, alpha: 0.78 },
+                { x: cx, y: cy, r: 42, maxR: 220 * scale, alpha: 0.62 }
+              );
+              spawnStardust(cx, cy, 55, 6.2);
+              secondaryHoles.splice(i, 1);
+              continue;
+            }
+
+            // Relativistic inspiral: radial inward pull + accelerating tangential orbital swirl
+            const radialSpeed = (135 + (420 * scale) / Math.max(35, dist * 0.45)) * dt;
+            const tangentSpeed = (180 + (520 * scale) / Math.max(35, dist * 0.4)) * dt;
+            const nxDir = dx / dist;
+            const nyDir = dy / dist;
+            sh.x += nxDir * radialSpeed - nyDir * tangentSpeed * 0.72;
+            sh.y += nyDir * radialSpeed + nxDir * tangentSpeed * 0.52;
+
+            if (Math.random() < 0.75) {
+              spawnStardust(sh.x, sh.y, 1, 2.2);
+            }
+          }
+        }
+
+        const effectiveHoverBoost = Math.min(1.6, coreHover + mergerAfterglow * 0.65);
+
+        // Detect cursor hover over the Black Hole & Accretion Disk
+        const distToCore = mouse.active ? Math.hypot(mouse.tx - cx, mouse.ty - cy) : 9999;
+        const hoverZone = 310 * scale;
+        const targetCoreHover = distToCore < hoverZone
+          ? Math.pow(1 - distToCore / hoverZone, 1.35)
+          : 0;
+        coreHover += (targetCoreHover - coreHover) * 0.09;
+
+        // Spawn high-energy accretion sparks & periodic shockwaves when hovering on the black hole
+        if (effectiveHoverBoost > 0.22) {
+          if (Math.random() < effectiveHoverBoost * 0.75) {
+            const ringAngle = Math.random() * Math.PI * 2;
+            const ringR = (55 + Math.random() * 110) * scale * (1 + effectiveHoverBoost * 0.45);
+            const sx = cx + Math.cos(ringAngle) * ringR;
+            const sy = cy + Math.sin(ringAngle) * ringR * 0.55;
+            spawnStardust(sx, sy, 1, 1.8 + effectiveHoverBoost * 1.6);
+          }
+          if (effectiveHoverBoost > 0.55 && Math.random() < 0.035) {
+            shockwaves.push({
+              x: cx,
+              y: cy,
+              r: 42 * scale * (1 + effectiveHoverBoost * 0.5),
+              maxR: (240 + effectiveHoverBoost * 150) * scale,
+              alpha: 0.42 * Math.min(1, effectiveHoverBoost)
+            });
+          }
+        }
+
+        if (mouse.down) {
+          mouse.warpBoost = Math.min(2.2, mouse.warpBoost + dt * 1.8);
+        } else {
+          mouse.warpBoost *= 0.94;
+        }
+        virtualTime += dt * (1 + effectiveHoverBoost * 2.1 + mouse.warpBoost + mouse.speed * 0.015);
+
+        // 1. Deep Cosmic Void Base
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.fillStyle = '#010206';
+        ctx.fillRect(0, 0, width, height);
+
+        // 2. Render Deep-Space Nebula Clouds with 3D Cursor Parallax
+        nebulae.forEach((n, idx) => {
+          const driftX = Math.sin(elapsed * n.speed + idx) * 45 - nx * (18 + idx * 6);
+          const driftY = Math.cos(elapsed * n.speed + idx) * 25 - ny * (14 + idx * 5);
+          const parallaxY = ((n.y * height - scrollY * 0.08) % (height * 1.3) + height * 1.3) % (height * 1.3) - height * 0.15;
+          const ncx = n.x * width + driftX;
+          const ncy = parallaxY + driftY;
+          const rad = Math.max(width, height) * n.rx;
+
+          const grad = ctx.createRadialGradient(ncx, ncy, 0, ncx, ncy, rad);
+          grad.addColorStop(0, `rgba(${n.color}, ${n.alpha})`);
+          grad.addColorStop(0.5, `rgba(${n.color}, ${n.alpha * 0.45})`);
+          grad.addColorStop(1, 'rgba(1, 2, 6, 0)');
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, width, height);
+        });
+
+        // 3. Render 950 Multi-Depth 3D Starfield + Cursor & Binary Black-Hole Gravity Wells
+        const nearbyStars = [];
+        const gravRadius = (mouse.down ? 260 : 175) * (1 + effectiveHoverBoost * 0.35);
+        const gravRadiusSq = gravRadius * gravRadius;
+        const bhPullRadius = 380 * scale * (1 + effectiveHoverBoost * 0.5);
+        const bhPullRadiusSq = bhPullRadius * bhPullRadius;
+
+        for (let i = 0; i < STAR_COUNT; i++) {
+          const st = stars[i];
+          const parallaxFactor = 0.03 + st.z * 0.25;
+          const mouseShiftX = -nx * (10 + st.z * 52);
+          const mouseShiftY = -ny * (8 + st.z * 42);
+
+          let sy = ((st.y * height - scrollY * parallaxFactor + mouseShiftY) % height + height) % height;
+          let sx = ((st.x * width + elapsed * (1.2 + st.z * 3.5) + mouseShiftX) % width + width) % width;
+
+          const twinkle = 0.62 + 0.38 * Math.sin(elapsed * st.twinkleSpeed + st.phase);
+          let alpha = st.baseAlpha * twinkle;
+          let radius = st.r;
+
+          // Strong Primary Black Hole gravitational pull on nearby stars
+          if (effectiveHoverBoost > 0.05) {
+            const bdx = cx - sx;
+            const bdy = cy - sy;
+            const bDistSq = bdx * bdx + bdy * bdy;
+            if (bDistSq < bhPullRadiusSq && bDistSq > 4) {
+              const bDist = Math.sqrt(bDistSq);
+              const bFactor = 1 - bDist / bhPullRadius;
+              const bhForce = bFactor * bFactor * effectiveHoverBoost * 48 * (0.4 + st.z * 0.8);
+              sx += (bdx / bDist) * bhForce * 0.65 - (bdy / bDist) * bhForce * 0.85;
+              sy += (bdy / bDist) * bhForce * 0.65 + (bdx / bDist) * bhForce * 0.85;
+              alpha = Math.min(1, alpha + bFactor * effectiveHoverBoost * 0.45);
+            }
+          }
+
+          // Secondary Black Holes gravitational pull on stars
+          for (let h = 0; h < secondaryHoles.length; h++) {
+            const sh = secondaryHoles[h];
+            const sdx = sh.x - sx;
+            const sdy = sh.y - sy;
+            const sRad = 280 * scale * sh.charge;
+            const sDistSq = sdx * sdx + sdy * sdy;
+            if (sDistSq < sRad * sRad && sDistSq > 4) {
+              const sDist = Math.sqrt(sDistSq);
+              const sFactor = 1 - sDist / sRad;
+              const sForce = sFactor * sFactor * sh.charge * 46 * (0.4 + st.z * 0.8);
+              sx += (sdx / sDist) * sForce * 0.65 - (sdy / sDist) * sForce * 0.85;
+              sy += (sdy / sDist) * sForce * 0.65 + (sdx / sDist) * sForce * 0.85;
+              alpha = Math.min(1, alpha + sFactor * sh.charge * 0.5);
+            }
+          }
+
+          // Gravitational attraction & orbital swirl around cursor
+          if (mouse.active) {
+            const dx = mouse.x - sx;
+            const dy = mouse.y - sy;
+            const distSq = dx * dx + dy * dy;
+            if (distSq < gravRadiusSq && distSq > 1) {
+              const dist = Math.sqrt(distSq);
+              const factor = 1 - dist / gravRadius;
+              const pullStrength = factor * factor * (mouse.down ? 38 : 18) * (0.4 + st.z * 0.8);
+              sx += (dx / dist) * pullStrength * 0.6 - (dy / dist) * pullStrength * 0.75;
+              sy += (dy / dist) * pullStrength * 0.6 + (dx / dist) * pullStrength * 0.75;
+              alpha = Math.min(1, alpha + factor * 0.48);
+              radius = st.r * (1 + factor * 0.55);
+
+              if (st.z > 0.35 && nearbyStars.length < 18) {
+                nearbyStars.push({ x: sx, y: sy, factor, color: st.color });
+              }
+            }
+          }
+
+          ctx.beginPath();
+          ctx.arc(sx, sy, radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${st.color}, ${alpha.toFixed(3)})`;
+          ctx.fill();
+
+          if (st.isBrightHeroStar && twinkle > 0.78) {
+            const flareLen = radius * 4.5 * twinkle;
+            ctx.strokeStyle = `rgba(${st.color}, ${(alpha * 0.45).toFixed(3)})`;
+            ctx.lineWidth = 0.7;
+            ctx.beginPath();
+            ctx.moveTo(sx - flareLen, sy);
+            ctx.lineTo(sx + flareLen, sy);
+            ctx.moveTo(sx, sy - flareLen);
+            ctx.lineTo(sx, sy + flareLen);
+            ctx.stroke();
+          }
+        }
+
+        // Render interactive constellation filaments near cursor
+        if (mouse.active && nearbyStars.length > 0) {
+          ctx.save();
+          ctx.globalCompositeOperation = 'lighter';
+          for (let i = 0; i < nearbyStars.length; i++) {
+            const a = nearbyStars[i];
+            ctx.beginPath();
+            ctx.moveTo(mouse.x, mouse.y);
+            ctx.lineTo(a.x, a.y);
+            ctx.strokeStyle = `rgba(103, 232, 249, ${(a.factor * 0.24).toFixed(3)})`;
+            ctx.lineWidth = 0.65;
+            ctx.stroke();
+
+            for (let j = i + 1; j < nearbyStars.length; j++) {
+              const b = nearbyStars[j];
+              const d = Math.hypot(a.x - b.x, a.y - b.y);
+              if (d < 95) {
+                ctx.beginPath();
+                ctx.moveTo(a.x, a.y);
+                ctx.lineTo(b.x, b.y);
+                ctx.strokeStyle = `rgba(186, 230, 253, ${((1 - d / 95) * a.factor * 0.2).toFixed(3)})`;
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+              }
+            }
+          }
+          ctx.restore();
+        }
+
+        // 4. Primary Black Hole Singularity & Accretion Disk (expands on hover & merger)
+        const vortexIntensity = Math.max(0.55, 1 - (scrollY / (height * 2.2)) * 0.42) * (1 + effectiveHoverBoost * 0.45);
+
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.rotate(rotAngle);
+        ctx.scale(1, Math.max(0.28, 0.44 + tiltOffset));
+        const haloRadius = 320 * scale * (1 + effectiveHoverBoost * 0.58 + mouse.warpBoost * 0.1);
+        const diskGrad = ctx.createRadialGradient(0, 0, 28 * scale * (1 + effectiveHoverBoost * 0.5), 0, 0, haloRadius);
+        diskGrad.addColorStop(0, 'rgba(0, 0, 0, 1)');
+        diskGrad.addColorStop(0.14, `rgba(252, 211, 77, ${Math.min(0.92, (0.32 + effectiveHoverBoost * 0.38 + mouse.warpBoost * 0.1) * vortexIntensity)})`);
+        diskGrad.addColorStop(0.32, `rgba(103, 232, 249, ${Math.min(0.76, (0.22 + effectiveHoverBoost * 0.28 + mouse.warpBoost * 0.08) * vortexIntensity)})`);
+        diskGrad.addColorStop(0.62, `rgba(139, 92, 246, ${Math.min(0.5, (0.12 + effectiveHoverBoost * 0.16) * vortexIntensity)})`);
+        diskGrad.addColorStop(1, 'rgba(1, 2, 6, 0)');
+        ctx.fillStyle = diskGrad;
+        ctx.beginPath();
+        ctx.arc(0, 0, haloRadius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        // 5. Render 170 Silky-Smooth Relativistic Spiral Streams ("Into the Void")
+        ctx.globalCompositeOperation = 'lighter';
+        const SEGMENTS = 36;
+
+        for (let i = 0; i < STREAM_COUNT; i++) {
+          const s = streams[i];
+          const progress = (virtualTime * s.speed + s.offset) % 1;
+
+          const headT = Math.min(1, progress * (1 + s.tailLen));
+          const tailT = Math.max(0, headT - s.tailLen);
+          if (headT - tailT < 0.015) continue;
+
+          const env = Math.sin(progress * Math.PI);
+          const alpha = Math.min(1, s.peakAlpha * env * vortexIntensity);
+          if (alpha < 0.01) continue;
+
+          ctx.beginPath();
+          for (let step = 0; step <= SEGMENTS; step++) {
+            const t = tailT + (headT - tailT) * (step / SEGMENTS);
+            const pt = getSpiralPoint(s, t, cx, cy, scale, rotAngle, tiltOffset, effectiveHoverBoost, secondaryHoles);
+            if (step === 0) ctx.moveTo(pt.x, pt.y);
+            else ctx.lineTo(pt.x, pt.y);
+          }
+
+          ctx.strokeStyle = `rgba(${s.color}, ${alpha.toFixed(3)})`;
+          ctx.lineWidth = s.lineWidth * (1 + effectiveHoverBoost * 0.65);
+          ctx.lineCap = 'round';
+          ctx.stroke();
+
+          if (headT < 0.97) {
+            const headPt = getSpiralPoint(s, headT, cx, cy, scale, rotAngle, tiltOffset, effectiveHoverBoost, secondaryHoles);
+            ctx.beginPath();
+            ctx.arc(headPt.x, headPt.y, s.lineWidth * (1.25 + effectiveHoverBoost * 0.75), 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(1, alpha * 1.7).toFixed(3)})`;
+            ctx.fill();
+          }
+        }
+
+        // 5B. Render Secondary Black Holes (Lensing Halo & Relativistic Tidal Bridge to Primary)
+        for (let h = 0; h < secondaryHoles.length; h++) {
+          const sh = secondaryHoles[h];
+          const shScale = scale * (0.45 + sh.charge * 0.65);
+
+          // Relativistic Tidal Bridge connecting Secondary & Primary Black Holes
+          if (sh.charge > 0.22) {
+            const bdx = cx - sh.x;
+            const bdy = cy - sh.y;
+            const bDist = Math.hypot(bdx, bdy);
+            if (bDist > 20) {
+              const nxOrth = -bdy / bDist;
+              const nyOrth = bdx / bDist;
+              const bridgeAlpha = Math.min(0.72, sh.charge * (sh.state === 'merging' ? 0.72 : 0.42));
+
+              for (let strand = -1; strand <= 1; strand++) {
+                ctx.beginPath();
+                const steps = 26;
+                for (let stp = 0; stp <= steps; stp++) {
+                  const u = stp / steps;
+                  const wave = Math.sin(u * Math.PI * 2 - virtualTime * 4.5 + strand * 1.2) * (18 + strand * 12) * Math.sin(u * Math.PI);
+                  const px = sh.x + bdx * u + nxOrth * wave;
+                  const py = sh.y + bdy * u + nyOrth * wave;
+                  if (stp === 0) ctx.moveTo(px, py);
+                  else ctx.lineTo(px, py);
+                }
+                ctx.strokeStyle = strand === 0
+                  ? `rgba(253, 230, 138, ${bridgeAlpha.toFixed(3)})`
+                  : `rgba(103, 232, 249, ${(bridgeAlpha * 0.75).toFixed(3)})`;
+                ctx.lineWidth = (strand === 0 ? 1.8 : 1.1) * scale;
+                ctx.stroke();
+              }
+            }
+          }
+
+          // Subtle Lensing Glow around Secondary Black Hole (bends existing light, no duplicate streams)
+          ctx.save();
+          ctx.translate(sh.x, sh.y);
+          ctx.rotate(rotAngle * 1.2);
+          ctx.scale(1, 0.55);
+          const shLensingR = 150 * shScale;
+          const shGrad = ctx.createRadialGradient(0, 0, 14 * shScale, 0, 0, shLensingR);
+          shGrad.addColorStop(0, 'rgba(0, 0, 0, 1)');
+          shGrad.addColorStop(0.24, `rgba(103, 232, 249, ${(0.42 * sh.charge).toFixed(3)})`);
+          shGrad.addColorStop(0.55, `rgba(252, 211, 77, ${(0.22 * sh.charge).toFixed(3)})`);
+          shGrad.addColorStop(1, 'rgba(1, 2, 6, 0)');
+          ctx.fillStyle = shGrad;
+          ctx.beginPath();
+          ctx.arc(0, 0, shLensingR, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+
+          // Contracting implosion ring while still charging (< 100%)
+          if (sh.state === 'forming' && !sh.formed) {
+            const implosionR = (1 - sh.charge) * 145 * scale + 38 * scale;
+            ctx.beginPath();
+            ctx.arc(sh.x, sh.y, implosionR, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(103, 232, 249, ${(0.75 * sh.charge).toFixed(3)})`;
+            ctx.lineWidth = 1.6;
+            ctx.stroke();
+          }
+        }
+
+        // 6. Render Interactive Stardust Particles & Click Shockwaves
+        for (let i = stardust.length - 1; i >= 0; i--) {
+          const p = stardust[i];
+          // Pull stardust toward the Primary Black Hole
+          const bdx = cx - p.x;
+          const bdy = cy - p.y;
+          const bDist = Math.max(30, Math.hypot(bdx, bdy));
+          const bForce = (18 * (1 + effectiveHoverBoost * 2.2)) / (bDist * 0.35);
+          p.vx += (bdx / bDist) * bForce * dt - (bdy / bDist) * bForce * 0.65 * dt;
+          p.vy += (bdy / bDist) * bForce * dt + (bdx / bDist) * bForce * 0.65 * dt;
+
+          // Also pull stardust toward any active/merging Secondary Black Hole
+          for (let h = 0; h < secondaryHoles.length; h++) {
+            const sh = secondaryHoles[h];
+            const sdx = sh.x - p.x;
+            const sdy = sh.y - p.y;
+            const sDist = Math.max(24, Math.hypot(sdx, sdy));
+            const sForce = (26 * sh.charge) / (sDist * 0.35);
+            p.vx += (sdx / sDist) * sForce * dt - (sdy / sDist) * sForce * 0.75 * dt;
+            p.vy += (sdy / sDist) * sForce * dt + (sdx / sDist) * sForce * 0.75 * dt;
+          }
+
+          p.vx *= 0.985;
+          p.vy *= 0.985;
+          p.x += p.vx;
+          p.y += p.vy;
+          p.life -= p.decay;
+
+          if (p.life <= 0 || bDist < 22 * (1 + effectiveHoverBoost * 0.6)) {
+            stardust.splice(i, 1);
+            continue;
+          }
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r * p.life * (1 + effectiveHoverBoost * 0.35), 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${p.color}, ${(p.life * 0.85).toFixed(3)})`;
+          ctx.fill();
+        }
+
+        for (let i = shockwaves.length - 1; i >= 0; i--) {
+          const sw = shockwaves[i];
+          sw.r += (sw.maxR - sw.r) * 0.08 + 2.2;
+          sw.alpha *= 0.93;
+          if (sw.alpha < 0.015 || sw.r >= sw.maxR) {
+            shockwaves.splice(i, 1);
+            continue;
+          }
+          ctx.beginPath();
+          ctx.arc(sw.x, sw.y, sw.r, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(103, 232, 249, ${sw.alpha.toFixed(3)})`;
+          ctx.lineWidth = 1.6;
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.arc(sw.x, sw.y, sw.r * 0.72, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(252, 211, 77, ${(sw.alpha * 0.55).toFixed(3)})`;
+          ctx.lineWidth = 0.9;
+          ctx.stroke();
+        }
+
+        // Subtle Cursor Gravity Halo
+        if (mouse.active) {
+          const cursorHaloR = mouse.down ? 130 : 85;
+          const cGrad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, cursorHaloR);
+          cGrad.addColorStop(0, `rgba(103, 232, 249, ${mouse.down ? 0.18 : 0.08})`);
+          cGrad.addColorStop(0.5, `rgba(252, 211, 77, ${mouse.down ? 0.08 : 0.03})`);
+          cGrad.addColorStop(1, 'rgba(1, 2, 6, 0)');
+          ctx.fillStyle = cGrad;
+          ctx.beginPath();
+          ctx.arc(mouse.x, mouse.y, cursorHaloR, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // 7A. Secondary Black Holes Event Horizon Cores & Photon Rings
+        ctx.globalCompositeOperation = 'source-over';
+        for (let h = 0; h < secondaryHoles.length; h++) {
+          const sh = secondaryHoles[h];
+          const shCoreR = (14 + sh.charge * 44) * scale;
+          const shCoreGrad = ctx.createRadialGradient(sh.x, sh.y, 3 * scale, sh.x, sh.y, shCoreR);
+          shCoreGrad.addColorStop(0, 'rgba(0, 0, 0, 1)');
+          shCoreGrad.addColorStop(0.56, 'rgba(1, 2, 8, 0.99)');
+          shCoreGrad.addColorStop(0.75, `rgba(103, 232, 249, ${(0.68 * sh.charge).toFixed(3)})`);
+          shCoreGrad.addColorStop(0.88, `rgba(252, 211, 77, ${(0.45 * sh.charge).toFixed(3)})`);
+          shCoreGrad.addColorStop(1, 'rgba(1, 2, 6, 0)');
+
+          ctx.beginPath();
+          ctx.arc(sh.x, sh.y, shCoreR, 0, Math.PI * 2);
+          ctx.fillStyle = shCoreGrad;
+          ctx.fill();
+
+          ctx.save();
+          ctx.globalCompositeOperation = 'lighter';
+          const shPhotonR = shCoreR * 0.62;
+          ctx.beginPath();
+          ctx.arc(sh.x, sh.y, shPhotonR, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(103, 232, 249, ${(0.78 * sh.charge).toFixed(3)})`;
+          ctx.lineWidth = (1.3 + sh.charge * 1.8) * scale;
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.arc(sh.x, sh.y, shPhotonR * 1.14, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(253, 230, 138, ${(0.55 * sh.charge).toFixed(3)})`;
+          ctx.lineWidth = (0.9 + sh.charge * 1.3) * scale;
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        // 7B. Primary Central Event Horizon Core & Relativistic Photon Ring (Expands on Hover & Merger!)
+        ctx.globalCompositeOperation = 'source-over';
+        const coreRadius = (56 + effectiveHoverBoost * 46) * scale;
+        const coreGrad = ctx.createRadialGradient(cx, cy, 4 * scale, cx, cy, coreRadius);
+        coreGrad.addColorStop(0, 'rgba(0, 0, 0, 1)');
+        coreGrad.addColorStop(0.54, 'rgba(1, 2, 8, 0.99)');
+        coreGrad.addColorStop(0.72, `rgba(252, 211, 77, ${Math.min(0.88, (0.28 + effectiveHoverBoost * 0.45 + mouse.warpBoost * 0.12) * vortexIntensity)})`);
+        coreGrad.addColorStop(0.86, `rgba(103, 232, 249, ${Math.min(0.68, (0.12 + effectiveHoverBoost * 0.35) * vortexIntensity)})`);
+        coreGrad.addColorStop(1, 'rgba(1, 2, 6, 0)');
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, coreRadius, 0, Math.PI * 2);
+        ctx.fillStyle = coreGrad;
+        ctx.fill();
+
+        // Blazing Photon Ring when hovering near the Black Hole or during/after Binary Merger
+        if (effectiveHoverBoost > 0.04) {
+          ctx.save();
+          ctx.globalCompositeOperation = 'lighter';
+          const photonR = coreRadius * 0.62;
+          ctx.beginPath();
+          ctx.arc(cx, cy, photonR, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(253, 230, 138, ${Math.min(0.95, effectiveHoverBoost * 0.65).toFixed(3)})`;
+          ctx.lineWidth = (1.4 + effectiveHoverBoost * 2.4) * scale;
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.arc(cx, cy, photonR * 1.12, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(103, 232, 249, ${Math.min(0.8, effectiveHoverBoost * 0.42).toFixed(3)})`;
+          ctx.lineWidth = (1.0 + effectiveHoverBoost * 1.6) * scale;
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+    })();
+
+    // ============================================================================
+    // 4. SCROLL REVEAL OBSERVER & VIEWPORT-AWARE AUTO-CYCLING GALLERY TABS
+    // ============================================================================
+    const revealItems = document.querySelectorAll('.scroll-reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    revealItems.forEach((el) => io.observe(el));
+
+    // Viewport-aware Auto-Cycling Project Galleries (cycles tabs only for projects currently visible on screen)
+    (function initViewportAutoGalleries() {
+      const AUTO_CYCLE_MS = 3600;
+      document.documentElement.style.setProperty('--cycle-ms', AUTO_CYCLE_MS + 'ms');
+
+      const showcases = document.querySelectorAll('.work-showcase');
+      const stateMap = new Map();
+
+      showcases.forEach((card) => {
+        const tabBar = card.querySelector('.media-tabs[data-gallery]');
+        const mediaStage = card.querySelector('.media-stage');
+        const state = {
+          inView: false,
+          hovered: false,
+          elapsed: 0,
+          lastTick: performance.now(),
+          tabBar
+        };
+        stateMap.set(card, state);
+
+        if (mediaStage) {
+          mediaStage.addEventListener('mouseenter', () => {
+            state.hovered = true;
+          });
+          mediaStage.addEventListener('mouseleave', () => {
+            state.hovered = false;
+            state.lastTick = performance.now();
+          });
+        }
+
+        if (tabBar) {
+          tabBar.querySelectorAll('.media-tab').forEach((btn) => {
+            btn.addEventListener('click', () => {
+              state.elapsed = 0;
+              state.lastTick = performance.now();
+            });
+          });
+        }
+      });
+
+      const activeObserver = new IntersectionObserver((entries) => {
+        const now = performance.now();
+        entries.forEach((entry) => {
+          const card = entry.target;
+          const st = stateMap.get(card);
+          if (!st) return;
+
+          if (entry.isIntersecting) {
+            st.inView = true;
+            st.elapsed = 0;
+            st.lastTick = now;
+            card.classList.add('active-in-view');
+            // Restart tab progress bar animation cleanly on enter
+            if (st.tabBar) {
+              const activeBtn = st.tabBar.querySelector('.media-tab.active');
+              if (activeBtn) {
+                activeBtn.classList.remove('active');
+                void activeBtn.offsetWidth;
+                activeBtn.classList.add('active');
+              }
+            }
+          } else {
+            st.inView = false;
+            card.classList.remove('active-in-view');
+          }
+        });
+      }, { threshold: 0.35, rootMargin: '-8% 0px -8% 0px' });
+
+      showcases.forEach((card) => activeObserver.observe(card));
+
+      // Smooth ticker that advances tabs of visible projects every AUTO_CYCLE_MS
+      setInterval(() => {
+        const now = performance.now();
+        const lbOpen = document.getElementById('lightbox')?.classList.contains('open');
+
+        stateMap.forEach((st) => {
+          if (!st.inView || !st.tabBar || st.hovered || lbOpen) {
+            st.lastTick = now;
+            return;
+          }
+          const dt = now - st.lastTick;
+          st.lastTick = now;
+          st.elapsed += dt;
+
+          if (st.elapsed >= AUTO_CYCLE_MS) {
+            st.elapsed = 0;
+            const tabs = Array.from(st.tabBar.querySelectorAll('.media-tab'));
+            if (tabs.length > 1) {
+              const currentIdx = tabs.findIndex(t => t.classList.contains('active'));
+              const nextIdx = (currentIdx + 1) % tabs.length;
+              tabs[nextIdx].click();
+            }
+          }
+        });
+      }, 120);
+    })();
+
+    // ============================================================================
+    // 5. SCROLL PROGRESS BAR & BACK-TO-TOP FLOATING TRIGGER
+    // ============================================================================
+    (function initScrollFeatures() {
+      const progressEl = document.getElementById('scroll-progress-bar');
+      const bttBtn = document.getElementById('back-to-top');
+
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        if (progressEl) progressEl.style.width = `${progress}%`;
+        if (bttBtn) {
+          if (scrollTop > 450) {
+            bttBtn.classList.add('visible');
+          } else {
+            bttBtn.classList.remove('visible');
+          }
+        }
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>
